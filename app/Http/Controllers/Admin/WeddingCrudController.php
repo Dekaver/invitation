@@ -76,9 +76,17 @@ class WeddingCrudController extends Controller
         $wedding->slug = $request->slug;
         $wedding->groom_name = $request->groom_name;
         $wedding->bride_name = $request->bride_name;
+        $wedding->groom_father = $request->groom_father;
+        $wedding->groom_mother = $request->groom_mother;
+        $wedding->bride_father = $request->bride_father;
+        $wedding->bride_mother = $request->bride_mother;
         $wedding->akad_date = $request->akad_date;
+        $wedding->akad_start = $request->akad_start;
+        $wedding->akad_end = $request->akad_end;
         $wedding->akad_location = $request->akad_location;
         $wedding->reception_date = $request->reception_date;
+        $wedding->reception_start = $request->reception_start;
+        $wedding->reception_end = $request->reception_end;
         $wedding->reception_location = $request->reception_location;
         $wedding->theme = $request->theme;
         $wedding->save();

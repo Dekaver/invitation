@@ -23,12 +23,13 @@ interface Wedding {
     bride_father: string;
     bride_mother: string;
     akad_date: string;
+    akad_start: string;
+    akad_end: string;
     akad_location: string;
-    akad_time: string;
     reception_date: string;
+    reception_start: string;
+    reception_end: string;
     reception_location: string;
-    reception_time: string;
-    reception_address: string;
     theme: string;
 }
 
@@ -47,12 +48,13 @@ const form = useForm({
     bride_father: props.wedding.bride_father,
     bride_mother: props.wedding.bride_mother,
     akad_date: props.wedding.akad_date,
+    akad_start: props.wedding.akad_start,
+    akad_end: props.wedding.akad_end,
     akad_location: props.wedding.akad_location,
-    akad_time: props.wedding.akad_time,
     reception_date: props.wedding.reception_date,
+    reception_start: props.wedding.reception_start,
+    reception_end: props.wedding.reception_end,
     reception_location: props.wedding.reception_location,
-    reception_time: props.wedding.reception_time,
-    reception_address: props.wedding.reception_address,
     theme: props.wedding.theme,
 });
 
@@ -85,246 +87,323 @@ const breadcrumbs = [
 <template>
     <Head title="Edit Wedding" />
     <AppLayout :breadcrumbs="breadcrumbs">
-        <Card class="max-w-2xl">
-            <CardHeader>
-                <CardTitle>Wedding Details</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <form @submit.prevent="submit" class="space-y-6">
-                    <!-- Couple Names -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <Label for="groom_name">Groom Name *</Label>
-                            <Input
-                                id="groom_name"
-                                v-model="form.groom_name"
-                                type="text"
-                                :class="{
-                                    'border-red-500': form.errors.groom_name,
-                                }"
-                            />
-                            <p
-                                v-if="form.errors.groom_name"
-                                class="mt-1 text-xs text-red-500"
-                            >
-                                {{ form.errors.groom_name }}
-                            </p>
-                        </div>
-                        <div>
-                            <Label for="bride_name">Bride Name *</Label>
-                            <Input
-                                id="bride_name"
-                                v-model="form.bride_name"
-                                type="text"
-                                :class="{
-                                    'border-red-500': form.errors.bride_name,
-                                }"
-                            />
-                            <p
-                                v-if="form.errors.bride_name"
-                                class="mt-1 text-xs text-red-500"
-                            >
-                                {{ form.errors.bride_name }}
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Parents -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <Label for="groom_father">Groom Father *</Label>
-                            <Input
-                                id="groom_father"
-                                v-model="form.groom_father"
-                                type="text"
-                                :class="{
-                                    'border-red-500': form.errors.groom_father,
-                                }"
-                            />
-                            <p
-                                v-if="form.errors.groom_father"
-                                class="mt-1 text-xs text-red-500"
-                            >
-                                {{ form.errors.groom_father }}
-                            </p>
-                        </div>
-                        <div>
-                            <Label for="groom_mother">Groom Mother *</Label>
-                            <Input
-                                id="groom_mother"
-                                v-model="form.groom_mother"
-                                type="text"
-                                :class="{
-                                    'border-red-500': form.errors.groom_mother,
-                                }"
-                            />
-                            <p
-                                v-if="form.errors.groom_mother"
-                                class="mt-1 text-xs text-red-500"
-                            >
-                                {{ form.errors.groom_mother }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <Label for="bride_father">Bride Father *</Label>
-                            <Input
-                                id="bride_father"
-                                v-model="form.bride_father"
-                                type="text"
-                                :class="{
-                                    'border-red-500': form.errors.bride_father,
-                                }"
-                            />
-                            <p
-                                v-if="form.errors.bride_father"
-                                class="mt-1 text-xs text-red-500"
-                            >
-                                {{ form.errors.bride_father }}
-                            </p>
-                        </div>
-                        <div>
-                            <Label for="bride_mother">Bride Mother *</Label>
-                            <Input
-                                id="bride_mother"
-                                v-model="form.bride_mother"
-                                type="text"
-                                :class="{
-                                    'border-red-500': form.errors.bride_mother,
-                                }"
-                            />
-                            <p
-                                v-if="form.errors.bride_mother"
-                                class="mt-1 text-xs text-red-500"
-                            >
-                                {{ form.errors.bride_mother }}
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Slug -->
-                    <div>
-                        <Label for="slug">URL Slug *</Label>
-                        <Input
-                            id="slug"
-                            v-model="form.slug"
-                            type="text"
-                            disabled
-                            class="bg-gray-100"
-                        />
-                        <p class="mt-1 text-xs text-muted-foreground">
-                            Cannot be changed
-                        </p>
-                    </div>
-
-                    <!-- Akad Date & Time -->
-                    <div class="grid grid-cols-3 gap-4">
-                        <div>
-                            <Label for="akad_date">Akad Date *</Label>
-                            <Input
-                                id="akad_date"
-                                v-model="form.akad_date"
-                                type="datetime-local"
-                                :class="{
-                                    'border-red-500': form.errors.akad_date,
-                                }"
-                            />
-                            <p
-                                v-if="form.errors.akad_date"
-                                class="mt-1 text-xs text-red-500"
-                            >
-                                {{ form.errors.akad_date }}
-                            </p>
-                        </div>
-                        <div>
-                            <Label for="akad_location">Akad Location *</Label>
-                            <Input
-                                id="akad_location"
-                                v-model="form.akad_location"
-                                type="text"
-                            />
-                        </div>
-                        <div>
-                            <Label for="akad_time">Akad Time</Label>
-                            <Input
-                                id="akad_time"
-                                v-model="form.akad_time"
-                                type="time"
-                            />
-                        </div>
-                    </div>
-
-                    <!-- Reception Date & Time -->
-                    <div class="grid grid-cols-3 gap-4">
-                        <div>
-                            <Label for="reception_date">Reception Date *</Label>
-                            <Input
-                                id="reception_date"
-                                v-model="form.reception_date"
-                                type="datetime-local"
-                                :class="{
-                                    'border-red-500':
-                                        form.errors.reception_date,
-                                }"
-                            />
-                            <p
-                                v-if="form.errors.reception_date"
-                                class="mt-1 text-xs text-red-500"
-                            >
-                                {{ form.errors.reception_date }}
-                            </p>
-                        </div>
-                        <div>
-                            <Label for="reception_location"
-                                >Reception Venue *</Label
-                            >
-                            <Input
-                                id="reception_location"
-                                v-model="form.reception_location"
-                                type="text"
-                            />
-                        </div>
-                        <div>
-                            <Label for="reception_time">Reception Time</Label>
-                            <Input
-                                id="reception_time"
-                                v-model="form.reception_time"
-                                type="time"
-                            />
-                        </div>
-                    </div>
-
-                    <!-- Theme -->
-                    <div>
-                        <Label for="theme">Theme *</Label>
-                        <Select v-model="form.theme">
-                            <SelectTrigger>
-                                <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem
-                                    v-for="t in themes"
-                                    :key="t"
-                                    :value="t"
+        <div class="space-y-6">
+            <!-- Couple Information Card -->
+            <Card>
+                <CardHeader>
+                    <CardTitle>Informasi Pasangan</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <form @submit.prevent="submit" class="space-y-6">
+                        <!-- Couple Names -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <Label for="groom_name"
+                                    >Nama Pengantin Pria *</Label
                                 >
-                                    {{ t.charAt(0).toUpperCase() + t.slice(1) }}
-                                </SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
+                                <Input
+                                    id="groom_name"
+                                    v-model="form.groom_name"
+                                    type="text"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.groom_name,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.groom_name"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.groom_name }}
+                                </p>
+                            </div>
+                            <div>
+                                <Label for="bride_name"
+                                    >Nama Pengantin Wanita *</Label
+                                >
+                                <Input
+                                    id="bride_name"
+                                    v-model="form.bride_name"
+                                    type="text"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.bride_name,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.bride_name"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.bride_name }}
+                                </p>
+                            </div>
+                        </div>
 
-                    <!-- Buttons -->
-                    <div class="flex gap-4 pt-4">
-                        <Button type="submit" :disabled="form.processing">
+                        <!-- Parents -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <Label for="groom_father"
+                                    >Ayah Pengantin Pria *</Label
+                                >
+                                <Input
+                                    id="groom_father"
+                                    v-model="form.groom_father"
+                                    type="text"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.groom_father,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.groom_father"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.groom_father }}
+                                </p>
+                            </div>
+                            <div>
+                                <Label for="groom_mother"
+                                    >Ibu Pengantin Pria *</Label
+                                >
+                                <Input
+                                    id="groom_mother"
+                                    v-model="form.groom_mother"
+                                    type="text"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.groom_mother,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.groom_mother"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.groom_mother }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <Label for="bride_father"
+                                    >Ayah Pengantin Wanita *</Label
+                                >
+                                <Input
+                                    id="bride_father"
+                                    v-model="form.bride_father"
+                                    type="text"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.bride_father,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.bride_father"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.bride_father }}
+                                </p>
+                            </div>
+                            <div>
+                                <Label for="bride_mother"
+                                    >Ibu Pengantin Wanita *</Label
+                                >
+                                <Input
+                                    id="bride_mother"
+                                    v-model="form.bride_mother"
+                                    type="text"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.bride_mother,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.bride_mother"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.bride_mother }}
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </CardContent>
+            </Card>
+
+            <!-- Event Details Card -->
+            <Card>
+                <CardHeader>
+                    <CardTitle>Detail Acara</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div class="space-y-6">
+                        <!-- Akad Date & Time -->
+                        <div class="grid grid-cols-4 gap-4">
+                            <div>
+                                <Label for="akad_date">Tanggal Akad *</Label>
+                                <Input
+                                    id="akad_date"
+                                    v-model="form.akad_date"
+                                    type="datetime-local"
+                                    :class="{
+                                        'border-red-500': form.errors.akad_date,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.akad_date"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.akad_date }}
+                                </p>
+                            </div>
+                            <div>
+                                <Label for="akad_start">Waktu Mulai Akad</Label>
+                                <Input
+                                    id="akad_start"
+                                    v-model="form.akad_start"
+                                    type="time"
+                                />
+                            </div>
+                            <div>
+                                <Label for="akad_end">Waktu Selesai Akad</Label>
+                                <Input
+                                    id="akad_end"
+                                    v-model="form.akad_end"
+                                    type="time"
+                                />
+                            </div>
+                            <div>
+                                <Label for="akad_location">Lokasi Akad *</Label>
+                                <Input
+                                    id="akad_location"
+                                    v-model="form.akad_location"
+                                    type="text"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Reception Date & Time -->
+                        <div class="grid grid-cols-4 gap-4">
+                            <div>
+                                <Label for="reception_date"
+                                    >Tanggal Resepsi *</Label
+                                >
+                                <Input
+                                    id="reception_date"
+                                    v-model="form.reception_date"
+                                    type="datetime-local"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.reception_date,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.reception_date"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.reception_date }}
+                                </p>
+                            </div>
+                            <div>
+                                <Label for="reception_start"
+                                    >Waktu Mulai Resepsi</Label
+                                >
+                                <Input
+                                    id="reception_start"
+                                    v-model="form.reception_start"
+                                    type="time"
+                                />
+                            </div>
+                            <div>
+                                <Label for="reception_end"
+                                    >Waktu Selesai Resepsi</Label
+                                >
+                                <Input
+                                    id="reception_end"
+                                    v-model="form.reception_end"
+                                    type="time"
+                                />
+                            </div>
+                            <div>
+                                <Label for="reception_location"
+                                    >Tempat Resepsi *</Label
+                                >
+                                <Input
+                                    id="reception_location"
+                                    v-model="form.reception_location"
+                                    type="text"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
+            <!-- Settings Card -->
+            <Card>
+                <CardHeader>
+                    <CardTitle>Pengaturan</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div class="space-y-6">
+                        <!-- Slug -->
+                        <div>
+                            <Label for="slug">URL Slug *</Label>
+                            <Input
+                                id="slug"
+                                v-model="form.slug"
+                                type="text"
+                                disabled
+                                class="bg-gray-100"
+                            />
+                            <p class="mt-1 text-xs text-muted-foreground">
+                                Tidak dapat diubah
+                            </p>
+                        </div>
+
+                        <!-- Theme -->
+                        <div>
+                            <Label for="theme">Tema *</Label>
+                            <Select v-model="form.theme">
+                                <SelectTrigger>
+                                    <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem
+                                        v-for="t in themes"
+                                        :key="t"
+                                        :value="t"
+                                    >
+                                        {{
+                                            t.charAt(0).toUpperCase() +
+                                            t.slice(1)
+                                        }}
+                                    </SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
+            <!-- Actions Card -->
+            <Card>
+                <CardHeader>
+                    <CardTitle>Aksi</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div class="flex gap-4">
+                        <Button
+                            type="submit"
+                            :disabled="form.processing"
+                            @click="submit"
+                        >
                             {{
                                 form.processing
-                                    ? 'Updating...'
-                                    : 'Update Wedding'
+                                    ? 'Memperbarui...'
+                                    : 'Perbarui Pernikahan'
                             }}
                         </Button>
                         <Link href="/admin/weddings" as="a">
-                            <Button variant="outline">Cancel</Button>
+                            <Button variant="outline">Batal</Button>
                         </Link>
                         <Button
                             type="button"
@@ -332,11 +411,11 @@ const breadcrumbs = [
                             @click="deleteWedding"
                             :disabled="form.processing"
                         >
-                            Delete
+                            Hapus
                         </Button>
                     </div>
-                </form>
-            </CardContent>
-        </Card>
+                </CardContent>
+            </Card>
+        </div>
     </AppLayout>
 </template>

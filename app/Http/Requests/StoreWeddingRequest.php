@@ -28,8 +28,12 @@ class StoreWeddingRequest extends FormRequest
             'bride_father' => 'required|string|max:100',
             'bride_mother' => 'required|string|max:100',
             'akad_date' => 'required|date|after:today',
+            'akad_start' => 'nullable|date_format:H:i',
+            'akad_end' => 'nullable|date_format:H:i|after:akad_start',
             'akad_location' => 'required|string|max:255',
             'reception_date' => 'required|date|after_or_equal:akad_date',
+            'reception_start' => 'nullable|date_format:H:i',
+            'reception_end' => 'nullable|date_format:H:i|after:reception_start',
             'reception_location' => 'required|string|max:255',
             'theme' => 'required|in:classic,modern,elegant',
         ];

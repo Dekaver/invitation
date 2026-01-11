@@ -22,12 +22,13 @@ const form = useForm({
     bride_father: '',
     bride_mother: '',
     akad_date: '',
+    akad_start: '',
+    akad_end: '',
     akad_location: '',
-    akad_time: '',
     reception_date: '',
+    reception_start: '',
+    reception_end: '',
     reception_location: '',
-    reception_time: '',
-    reception_address: '',
     theme: 'classic',
 });
 
@@ -196,7 +197,7 @@ const breadcrumbs = [
                     </div>
 
                     <!-- Akad Date & Time -->
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-4 gap-4">
                         <div>
                             <Label for="akad_date">Akad Date *</Label>
                             <Input
@@ -215,6 +216,22 @@ const breadcrumbs = [
                             </p>
                         </div>
                         <div>
+                            <Label for="akad_start">Akad Start Time</Label>
+                            <Input
+                                id="akad_start"
+                                v-model="form.akad_start"
+                                type="time"
+                            />
+                        </div>
+                        <div>
+                            <Label for="akad_end">Akad End Time</Label>
+                            <Input
+                                id="akad_end"
+                                v-model="form.akad_end"
+                                type="time"
+                            />
+                        </div>
+                        <div>
                             <Label for="akad_location">Akad Location *</Label>
                             <Input
                                 id="akad_location"
@@ -223,18 +240,10 @@ const breadcrumbs = [
                                 placeholder="Mosque Name"
                             />
                         </div>
-                        <div>
-                            <Label for="akad_time">Akad Time</Label>
-                            <Input
-                                id="akad_time"
-                                v-model="form.akad_time"
-                                type="time"
-                            />
-                        </div>
                     </div>
 
                     <!-- Reception Date & Time -->
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-4 gap-4">
                         <div>
                             <Label for="reception_date">Reception Date *</Label>
                             <Input
@@ -254,6 +263,26 @@ const breadcrumbs = [
                             </p>
                         </div>
                         <div>
+                            <Label for="reception_start"
+                                >Reception Start Time</Label
+                            >
+                            <Input
+                                id="reception_start"
+                                v-model="form.reception_start"
+                                type="time"
+                            />
+                        </div>
+                        <div>
+                            <Label for="reception_end"
+                                >Reception End Time</Label
+                            >
+                            <Input
+                                id="reception_end"
+                                v-model="form.reception_end"
+                                type="time"
+                            />
+                        </div>
+                        <div>
                             <Label for="reception_location"
                                 >Reception Venue *</Label
                             >
@@ -262,14 +291,6 @@ const breadcrumbs = [
                                 v-model="form.reception_location"
                                 type="text"
                                 placeholder="Hotel Name"
-                            />
-                        </div>
-                        <div>
-                            <Label for="reception_time">Reception Time</Label>
-                            <Input
-                                id="reception_time"
-                                v-model="form.reception_time"
-                                type="time"
                             />
                         </div>
                     </div>
