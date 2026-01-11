@@ -16,7 +16,7 @@
         <div class="rounded-3xl overflow-hidden shadow-lg border border-purple-200">
 
             {{-- Google Maps Embed --}}
-            <iframe src="{{ $wedding->map_embed_url }}" class="w-full h-[400px] md:h-[500px] border-0" loading="lazy"
+            <iframe src="{{ $wedding->map_embed_url }}" class="w-full h-100 md:h-125 border-0" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
 

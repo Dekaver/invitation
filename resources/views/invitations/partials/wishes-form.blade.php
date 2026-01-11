@@ -11,7 +11,7 @@
                 Nama Anda
             </label>
             <input type="text" name="guest_name" id="guest_name" placeholder="Masukkan nama Anda"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 @error('guest_name') border-red-500 @enderror"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 @error('guest_name') @enderror"
                 value="{{ old('guest_name') }}" required>
             @error('guest_name')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
@@ -23,7 +23,7 @@
                 Pesan Anda
             </label>
             <textarea name="message" id="message" placeholder="Bagikan doa restu dan ucapan hangat Anda..." rows="4"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 @error('message') border-red-500 @enderror"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 @error('message') @enderror"
                 required>{{ old('message') }}</textarea>
             <p class="text-gray-500 text-xs mt-1">Minimal 5 karakter, maksimal 500 karakter</p>
             @error('message')
@@ -32,7 +32,7 @@
         </div>
 
         <button type="submit"
-            class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-3 px-4 rounded-lg hover:shadow-lg transition">
+            class="w-full bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold py-3 px-4 rounded-lg hover:shadow-lg transition">
             Kirim Doa Restu
         </button>
 

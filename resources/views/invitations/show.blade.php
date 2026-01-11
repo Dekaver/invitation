@@ -15,6 +15,9 @@
         <!-- Right Content (Main Content) - Full Width on Mobile -->
         <div class="lg:w-[38%] h-screen overflow-y-auto bg-white scroll-hide-y">
             <div class="">
+                <!-- Cover -->
+                @include('invitations.partials.cover', ['wedding' => $wedding])
+
                 <!-- Couple Information -->
                 @include('invitations.partials.couple-info', ['wedding' => $wedding])
 

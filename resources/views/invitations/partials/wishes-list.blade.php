@@ -5,7 +5,7 @@
     @if ($wedding->wishes->count() > 0)
         <div class="space-y-4 max-h-96 overflow-y-auto pr-2">
             @foreach ($wishes as $wish)
-                <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4 border-l-4 border-purple-300">
+                <div class="bg-linear-to-r from-purple-50 to-pink-50 rounded-lg p-4 border-l-4 border-purple-300">
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <p class="font-semibold text-gray-800">

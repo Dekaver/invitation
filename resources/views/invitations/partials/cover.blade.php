@@ -1,0 +1,76 @@
+<div id="cover"
+    class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden
+           bg-linear-to-b from-purple-200 via-white to-purple-200">
+
+    <!-- Decorative top -->
+    <img src="{{ asset('assets/5.png') }}" class="absolute -top-6 -left-6 w-52 opacity-70 rotate-180" />
+    <img src="{{ asset('assets/3.png') }}" class="absolute -top-6 left-1/2 -translate-x-1/2 w-56 opacity-80" />
+    <img src="{{ asset('assets/5.png') }}" class="absolute -top-6 -right-6 w-52 opacity-70 rotate-x-180" />
+
+    <!-- Decorative side -->
+    <img src="{{ asset('assets/3.png') }}" class="absolute top-[20%] -left-20 w-48 opacity-60 rotate-90" />
+    <img src="{{ asset('assets/3.png') }}" class="absolute top-[30%] -left-20 w-48 opacity-60 rotate-90" />
+    <img src="{{ asset('assets/3.png') }}" class="absolute top-[20%] -right-20 w-48 opacity-60 rotate-90" />
+    <img src="{{ asset('assets/3.png') }}" class="absolute top-[30%] -right-20 w-48 opacity-60 rotate-90" />
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center space-y-4 -mt-16">
+
+        <!-- Subtitle -->
+        <span
+            class="uppercase tracking-[0.3em] text-xs md:text-sm text-purple-500
+                   animate-in fade-in duration-1000">
+            The Wedding Of
+        </span>
+
+        <!-- Groom -->
+        <h2
+            class="font-wedding text-4xl md:text-6xl font-bold text-transparent bg-clip-text
+                   bg-linear-to-r from-purple-600 to-pink-500
+                   animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200 p-2">
+            {{ $wedding->groom_name }}
+        </h2>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-4 animate-in fade-in duration-1000 delay-400">
+            <span class="w-16 h-px bg-purple-300"></span>
+            <span class="text-3xl text-purple-400 font-light">&</span>
+            <span class="w-16 h-px bg-purple-300"></span>
+        </div>
+
+        <!-- Bride -->
+        <h2
+            class="font-wedding text-4xl md:text-6xl font-bold text-transparent bg-clip-text
+                   bg-linear-to-r from-purple-600 to-pink-500
+                   animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600 p-2">
+            {{ $wedding->bride_name }}
+        </h2>
+        <button id="openInvitation"
+            class="mt-12 bg-linear-to-r from-purple-600 to-pink-500 text-white py-3 px-8 rounded-full hover:shadow-lg transition animate-bounce">
+            Buka Undangan
+        </button>
+    </div>
+
+    <!-- Decorative bottom -->
+    <img src="{{ asset('assets/bottom.png') }}"
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full opacity-80
+               animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-800" />
+</div>
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('openInvitation');
+            const cover = document.getElementById('cover');
+
+            const main = document.getElementById('mainContent'); // konten undangan
+
+            btn.addEventListener('click', function() {
+                cover.classList.add('transition-opacity', 'duration-700', 'opacity-0');
+                setTimeout(() => cover.style.display = 'none', 700);
+                main.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+@endpush
