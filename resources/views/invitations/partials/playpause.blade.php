@@ -1,10 +1,10 @@
 <!-- Tombol Play Musik -->
 <button id="playBtn" title="Putar Musik">
-    <span>🎵</span>
+    <span>⏸️</span>
 </button>
 
 <!-- Audio Background -->
-<audio id="backgroundMusic" loop>
+<audio id="backgroundMusic" loop autoplay>
     <source src="{{ asset('assets/audio/backsound.mpeg') }}" type="audio/mpeg">
     Browsermu tidak mendukung audio.
 </audio>

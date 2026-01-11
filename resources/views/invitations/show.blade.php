@@ -16,16 +16,16 @@
         <div class="lg:w-[38%] h-screen overflow-y-auto bg-white scroll-hide-y">
             <div class="">
                 <!-- Couple Information -->
-                {{-- @include('invitations.partials.couple-info', ['wedding' => $wedding]) --}}
+                @include('invitations.partials.couple-info', ['wedding' => $wedding])
 
                 <!-- Event Details -->
                 @include('invitations.partials.event-details', ['wedding' => $wedding])
 
                 <!-- Countdown Timer -->
-                {{-- @include('invitations.partials.countdown', ['wedding' => $wedding]) --}}
+                @include('invitations.partials.countdown', ['wedding' => $wedding])
 
                 <!-- Map -->
-                {{-- @include('invitations.partials.map', ['wedding' => $wedding]) --}}
+                @include('invitations.partials.map', ['wedding' => $wedding])
 
 
                 @if ($wedding->gifts()->exists())
