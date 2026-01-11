@@ -14,46 +14,45 @@
                 @method('PUT')
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-3">Your RSVP</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">RSVP Anda</label>
                     <div class="space-y-2">
                         <label class="flex items-center cursor-pointer">
                             <input type="radio" name="rsvp_status" value="yes" class="w-4 h-4 text-green-600"
                                 {{ $guest->rsvp_status === 'yes' ? 'checked' : '' }} required>
-                            <span class="ml-3 text-gray-700">✓ I will attend</span>
+                            <span class="ml-3 text-gray-700">✓ Saya akan hadir</span>
                         </label>
                         <label class="flex items-center cursor-pointer">
                             <input type="radio" name="rsvp_status" value="no" class="w-4 h-4 text-red-600"
                                 {{ $guest->rsvp_status === 'no' ? 'checked' : '' }}>
-                            <span class="ml-3 text-gray-700">✗ I cannot attend</span>
+                            <span class="ml-3 text-gray-700">✗ Saya tidak bisa hadir</span>
                         </label>
                         <label class="flex items-center cursor-pointer">
                             <input type="radio" name="rsvp_status" value="maybe" class="w-4 h-4 text-yellow-600"
                                 {{ $guest->rsvp_status === 'maybe' ? 'checked' : '' }}>
-                            <span class="ml-3 text-gray-700">? I am not sure</span>
+                            <span class="ml-3 text-gray-700">? Saya belum yakin</span>
                         </label>
                     </div>
                 </div>
 
                 <div id="guest-count-group" class="hidden">
-                    <label for="total_guest" class="block text-sm font-medium text-gray-700 mb-2">Number of
-                        Guests</label>
+                    <label for="total_guest" class="block text-sm font-medium text-gray-700 mb-2">Jumlah Tamu</label>
                     <select name="total_guest" id="total_guest"
                         class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                         @for ($i = 1; $i <= 10; $i++)
                             <option value="{{ $i }}" {{ $guest->total_guest == $i ? 'selected' : '' }}>
-                                {{ $i }} {{ $i === 1 ? 'Guest' : 'Guests' }}</option>
+                                {{ $i }} {{ $i === 1 ? 'Tamu' : 'Tamu' }}</option>
                         @endfor
                     </select>
                 </div>
 
                 <button type="submit"
-                    class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition">
-                    Submit RSVP
+                    class="w-full bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition">
+                    Kirim RSVP
                 </button>
 
                 @if ($guest->rsvp_status)
                     <p class="text-sm text-gray-600 bg-green-50 p-2 rounded">
-                        ✓ Your response was recorded
+                        ✓ Respons Anda telah dicatat
                     </p>
                 @endif
             </form>
@@ -75,8 +74,8 @@
             </script>
         @else
             <div class="text-center py-4">
-                <p class="text-gray-600 text-sm mb-3">Guest not found</p>
-                <p class="text-gray-500 text-xs">Please check your invitation link</p>
+                <p class="text-gray-600 text-sm mb-3">Tamu tidak ditemukan</p>
+                <p class="text-gray-500 text-xs">Silakan periksa tautan undangan Anda</p>
             </div>
         @endif
     @else
@@ -86,7 +85,7 @@
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <p class="text-gray-600 text-sm">
-                Use your unique guest link to RSVP
+                Gunakan tautan tamu unik Anda untuk RSVP
             </p>
         </div>
     @endif

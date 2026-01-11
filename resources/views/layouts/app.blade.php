@@ -14,10 +14,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700&display=swap" rel="stylesheet" />
 
     <style>
         .font-wedding {
             font-family: 'Great Vibes', cursive;
+        }
+
+        .font-arabic {
+            font-family: 'Amiri', serif;
         }
     </style>
 
@@ -30,6 +35,7 @@
     <div class="min-h-screen bg-gray-50">
         @yield('content')
     </div>
+    @stack('scripts')
 </body>
 
 </html>

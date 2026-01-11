@@ -1,6 +1,6 @@
 <!-- Wishes List -->
 <div class="bg-gray-50 rounded-lg p-6">
-    <h3 class="text-2xl font-bold text-gray-800 mb-6">Blessings & Wishes</h3>
+    <h3 class="text-2xl font-bold text-gray-800 mb-6">Doa Restu & Ucapan</h3>
 
     @if ($wedding->wishes->count() > 0)
         <div class="space-y-4 max-h-96 overflow-y-auto pr-2">
@@ -37,7 +37,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
                 </path>
             </svg>
-            <p class="text-gray-500">No blessings yet. Be the first to share one!</p>
+            <p class="text-gray-500">Belum ada doa restu. Jadilah yang pertama membagikannya!</p>
         </div>
     @endif
 </div>

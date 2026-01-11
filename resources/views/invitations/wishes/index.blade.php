@@ -8,10 +8,10 @@
             <!-- Header -->
             <div class="text-center mb-12">
                 <h1 class="text-4xl font-bold text-gray-800 mb-2">
-                    Wishes & Blessings
+                    Doa Restu & Ucapan
                 </h1>
                 <p class="text-gray-600">
-                    for {{ $wedding->groom_name }} & {{ $wedding->bride_name }}
+                    untuk {{ $wedding->groom_name }} & {{ $wedding->bride_name }}
                 </p>
             </div>
 
@@ -41,7 +41,7 @@
                         @empty
                             <div class="bg-white rounded-lg shadow p-6 text-center">
                                 <p class="text-gray-500">
-                                    No wishes yet. Be the first to leave a blessing!
+                                    Belum ada ucapan. Jadilah yang pertama meninggalkan doa restu!
                                 </p>
                             </div>
                         @endforelse
@@ -58,7 +58,7 @@
                 <!-- Wish Form Sidebar -->
                 <div class="md:col-span-1">
                     <div id="form" class="bg-white rounded-lg shadow-lg p-6 sticky top-4">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Leave a Wish</h2>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Tinggalkan Ucapan</h2>
 
                         @if ($errors->any())
                             <div class="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
@@ -77,7 +77,7 @@
                             <!-- Guest Name -->
                             <div>
                                 <label for="guest_name" class="block font-semibold text-gray-700 mb-2">
-                                    Your Name
+                                    Nama Anda
                                 </label>
                                 <input type="text" id="guest_name" name="guest_name"
                                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -90,13 +90,13 @@
                             <!-- Message -->
                             <div>
                                 <label for="message" class="block font-semibold text-gray-700 mb-2">
-                                    Your Wishes
+                                    Ucapan Anda
                                 </label>
                                 <textarea id="message" name="message" rows="6"
                                     class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
-                                    placeholder="Share your best wishes and blessings..." required>{{ old('message') }}</textarea>
+                                    placeholder="Bagikan doa restu dan ucapan terbaik Anda..." required>{{ old('message') }}</textarea>
                                 <p class="text-gray-500 text-xs mt-1">
-                                    Max 500 characters
+                                    Maksimal 500 karakter
                                 </p>
                                 @error('message')
                                     <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
@@ -106,13 +106,13 @@
                             <!-- Submit Button -->
                             <button type="submit"
                                 class="w-full px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition">
-                                Send Wish
+                                Kirim Ucapan
                             </button>
                         </form>
 
                         <!-- Info Text -->
                         <p class="text-gray-500 text-xs mt-4 text-center">
-                            Your wish will be visible to all guests
+                            Ucapan Anda akan terlihat oleh semua tamu
                         </p>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
             <div class="mt-8 text-center">
                 <a href="{{ route('invitations.show', ['wedding' => $wedding->slug]) }}"
                     class="text-purple-600 hover:text-purple-700 font-semibold">
-                    ← Back to Invitation
+                    ← Kembali ke Undangan
                 </a>
             </div>
         </div>
