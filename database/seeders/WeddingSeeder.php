@@ -18,13 +18,13 @@ class WeddingSeeder extends Seeder
     {
         // Create a sample wedding
         $wedding = Wedding::create([
-            'slug' => 'john-sarah-2026',
-            'groom_name' => 'John Doe',
-            'groom_father' => 'Mr. David Doe',
-            'groom_mother' => 'Mrs. Margaret Doe',
-            'bride_name' => 'Sarah Jane Smith',
-            'bride_father' => 'Mr. Robert Smith',
-            'bride_mother' => 'Mrs. Elizabeth Smith',
+            'slug' => 'alwi-anti',
+            'groom_name' => 'Alwi Wahyudi',
+            'groom_father' => 'Suwardi',
+            'groom_mother' => 'Iis Fatimah',
+            'bride_name' => 'Anti Suryani',
+            'bride_father' => 'Idin',
+            'bride_mother' => 'Aminah',
             'akad_date' => now()->addMonth()->setHour(10)->setMinute(0),
             'akad_start' => now()->addMonth()->setHour(10)->setMinute(0),
             'akad_end' => now()->addMonth()->setHour(11)->setMinute(0),

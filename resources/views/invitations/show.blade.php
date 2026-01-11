@@ -5,7 +5,7 @@
 @section('content')
     <div class="h-screen bg-linear-to-br from-pink-50 to-purple-50 flex">
         <!-- Left Sidebar (Fixed) - Hidden on Mobile -->
-        <div class="hidden lg:block lg:w-7/12 lg:shrink-0 bg-white shadow-lg">
+        <div class="hidden lg:block lg:w-[63%] lg:shrink-0 bg-white shadow-lg">
             <div class="sticky top-0 h-screen overflow-y-auto">
                 <!-- Couple Photo -->
                 @include('invitations.partials.couple-photo', ['wedding' => $wedding])
@@ -13,7 +13,7 @@
         </div>
 
         <!-- Right Content (Main Content) - Full Width on Mobile -->
-        <div class="lg:w-5/12 h-screen overflow-y-auto bg-white scroll-hide-y">
+        <div class="lg:w-[38%] h-screen overflow-y-auto bg-white scroll-hide-y">
             <div class="">
                 <!-- Couple Information -->
                 @include('invitations.partials.couple-info', ['wedding' => $wedding])

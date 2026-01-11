@@ -19,7 +19,10 @@
             <h2
                 class="font-wedding text-4xl md:text-6xl font-bold text-transparent bg-clip-text
                    bg-linear-to-r from-purple-600 to-pink-500
-                   animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
+                   animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300
+                   flex items-center justify-center
+                   h-20
+                   ">
                 {{ $wedding->groom_name }}
             </h2>
 
@@ -32,14 +35,18 @@
             <h2
                 class="font-wedding text-4xl md:text-6xl font-bold text-transparent bg-clip-text
                    bg-linear-to-r from-purple-600 to-pink-500
-                   animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-700">
+                   animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-700
+                   w-full
+                   flex items-center justify-center
+                   h-20">
+
                 {{ $wedding->bride_name }}
             </h2>
         </div>
 
         <!-- Decorative bottom -->
-        <img src="{{ asset('assets/flower-bottom.png') }}"
-            class="absolute bottom-8 left-1/2 -translate-x-1/2 w-24 opacity-80
+        <img src="{{ asset('assets/bottom.png') }}"
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 w-full opacity-80
                animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-900" />
     </div>
 
