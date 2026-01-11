@@ -9,7 +9,7 @@
         Countdown
     </h2>
 
-    <div id="countdown" class="flex justify-center gap-4 md:gap-6 text-center">
+    <div id="countdown" class="flex justify-center gap-4 md:gap-6 text-center text-black">
         <div class="bg-white/80 backdrop-blur rounded-2xl w-20 md:w-24 py-4 shadow-sm border border-purple-200">
             <span id="days">0</span>
             <small>Hari</small>
