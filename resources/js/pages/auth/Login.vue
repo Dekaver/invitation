@@ -28,7 +28,7 @@ defineProps<{
 
         <div
             v-if="status"
-            class="mb-4 text-center text-sm font-medium text-green-600"
+            class="mb-4 rounded-lg border border-green-200 bg-green-50 p-3 text-center text-sm font-medium text-green-600 dark:border-green-800 dark:bg-green-900/20"
         >
             {{ status }}
         </div>
@@ -41,7 +41,11 @@ defineProps<{
         >
             <div class="grid gap-6">
                 <div class="grid gap-2">
-                    <Label for="email">Email address</Label>
+                    <Label
+                        for="email"
+                        class="text-sm font-medium text-foreground"
+                        >Email address</Label
+                    >
                     <Input
                         id="email"
                         type="email"
@@ -50,18 +54,23 @@ defineProps<{
                         autofocus
                         :tabindex="1"
                         autocomplete="email"
-                        placeholder="email@example.com"
+                        placeholder="your@email.com"
+                        class="h-11"
                     />
                     <InputError :message="errors.email" />
                 </div>
 
                 <div class="grid gap-2">
                     <div class="flex items-center justify-between">
-                        <Label for="password">Password</Label>
+                        <Label
+                            for="password"
+                            class="text-sm font-medium text-foreground"
+                            >Password</Label
+                        >
                         <TextLink
                             v-if="canResetPassword"
                             :href="request()"
-                            class="text-sm"
+                            class="text-sm text-rose-600 hover:text-rose-700 dark:text-rose-400 dark:hover:text-rose-300"
                             :tabindex="5"
                         >
                             Forgot password?
@@ -74,27 +83,31 @@ defineProps<{
                         required
                         :tabindex="2"
                         autocomplete="current-password"
-                        placeholder="Password"
+                        placeholder="Enter your password"
+                        class="h-11"
                     />
                     <InputError :message="errors.password" />
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <Label for="remember" class="flex items-center space-x-3">
+                    <Label
+                        for="remember"
+                        class="flex cursor-pointer items-center space-x-3"
+                    >
                         <Checkbox id="remember" name="remember" :tabindex="3" />
-                        <span>Remember me</span>
+                        <span class="text-sm text-foreground">Remember me</span>
                     </Label>
                 </div>
 
                 <Button
                     type="submit"
-                    class="mt-4 w-full"
+                    class="mt-4 h-11 w-full bg-gradient-to-r from-rose-500 to-pink-600 font-medium text-white shadow-lg transition-all duration-200 hover:from-rose-600 hover:to-pink-700 hover:shadow-xl"
                     :tabindex="4"
                     :disabled="processing"
                     data-test="login-button"
                 >
-                    <Spinner v-if="processing" />
-                    Log in
+                    <Spinner v-if="processing" class="mr-2" />
+                    {{ processing ? 'Signing in...' : 'Sign in' }}
                 </Button>
             </div>
 
@@ -103,7 +116,12 @@ defineProps<{
                 v-if="canRegister"
             >
                 Don't have an account?
-                <TextLink :href="register()" :tabindex="5">Sign up</TextLink>
+                <TextLink
+                    :href="register()"
+                    :tabindex="5"
+                    class="font-medium text-rose-600 hover:text-rose-700 dark:text-rose-400 dark:hover:text-rose-300"
+                    >Sign up</TextLink
+                >
             </div>
         </Form>
     </AuthBase>

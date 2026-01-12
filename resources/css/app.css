@@ -6,6 +6,15 @@
     @font-face {
         font-family: 'Great Vibes';
         font-display: swap;
+        src: url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    }
+
+    .font-wedding {
+        font-family: 'Great Vibes', cursive;
+    }
+
+    .font-arabic {
+        font-family: 'Amiri', serif;
     }
 }
 
