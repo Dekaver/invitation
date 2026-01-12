@@ -24,10 +24,14 @@ class Wedding extends Model
         'akad_start',
         'akad_end',
         'akad_location',
+        'akad_map_link',
         'reception_date',
         'reception_start',
         'reception_end',
         'reception_location',
+        'reception_map_link',
+        'map_url',
+        'map_embed_url',
         'theme',
     ];
 

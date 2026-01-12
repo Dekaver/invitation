@@ -26,10 +26,14 @@ interface Wedding {
     akad_start: string;
     akad_end: string;
     akad_location: string;
+    akad_map_link: string;
     reception_date: string;
     reception_start: string;
     reception_end: string;
     reception_location: string;
+    reception_map_link: string;
+    map_url: string;
+    map_embed_url: string;
     theme: string;
 }
 
@@ -51,10 +55,14 @@ const form = useForm({
     akad_start: props.wedding.akad_start,
     akad_end: props.wedding.akad_end,
     akad_location: props.wedding.akad_location,
+    akad_map_link: props.wedding.akad_map_link,
     reception_date: props.wedding.reception_date,
     reception_start: props.wedding.reception_start,
     reception_end: props.wedding.reception_end,
     reception_location: props.wedding.reception_location,
+    reception_map_link: props.wedding.reception_map_link,
+    map_url: props.wedding.map_url,
+    map_embed_url: props.wedding.map_embed_url,
     theme: props.wedding.theme,
 });
 
@@ -236,7 +244,7 @@ const breadcrumbs = [
                 <CardContent>
                     <div class="space-y-6">
                         <!-- Akad Date & Time -->
-                        <div class="grid grid-cols-4 gap-4">
+                        <div class="grid grid-cols-5 gap-4">
                             <div>
                                 <Label for="akad_date">Tanggal Akad *</Label>
                                 <Input
@@ -278,10 +286,21 @@ const breadcrumbs = [
                                     type="text"
                                 />
                             </div>
+                            <div>
+                                <Label for="akad_map_link"
+                                    >Link Maps Akad</Label
+                                >
+                                <Input
+                                    id="akad_map_link"
+                                    v-model="form.akad_map_link"
+                                    type="url"
+                                    placeholder="https://maps.google.com/..."
+                                />
+                            </div>
                         </div>
 
                         <!-- Reception Date & Time -->
-                        <div class="grid grid-cols-4 gap-4">
+                        <div class="grid grid-cols-5 gap-4">
                             <div>
                                 <Label for="reception_date"
                                     >Tanggal Resepsi *</Label
@@ -332,6 +351,17 @@ const breadcrumbs = [
                                     type="text"
                                 />
                             </div>
+                            <div>
+                                <Label for="reception_map_link"
+                                    >Link Maps Resepsi</Label
+                                >
+                                <Input
+                                    id="reception_map_link"
+                                    v-model="form.reception_map_link"
+                                    type="url"
+                                    placeholder="https://maps.google.com/..."
+                                />
+                            </div>
                         </div>
                     </div>
                 </CardContent>
@@ -379,6 +409,36 @@ const breadcrumbs = [
                                     </SelectItem>
                                 </SelectContent>
                             </Select>
+                        </div>
+
+                        <!-- Map URL -->
+                        <div>
+                            <Label for="map_url">Link Google Maps</Label>
+                            <Input
+                                id="map_url"
+                                v-model="form.map_url"
+                                type="url"
+                                placeholder="https://maps.google.com/..."
+                            />
+                            <p class="mt-1 text-xs text-muted-foreground">
+                                Link untuk tombol "Buka di Google Maps"
+                            </p>
+                        </div>
+
+                        <!-- Map Embed URL -->
+                        <div>
+                            <Label for="map_embed_url"
+                                >Embed URL Google Maps</Label
+                            >
+                            <Input
+                                id="map_embed_url"
+                                v-model="form.map_embed_url"
+                                type="url"
+                                placeholder="https://www.google.com/maps/embed?..."
+                            />
+                            <p class="mt-1 text-xs text-muted-foreground">
+                                URL embed untuk menampilkan peta
+                            </p>
                         </div>
                     </div>
                 </CardContent>

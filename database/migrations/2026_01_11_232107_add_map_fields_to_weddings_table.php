@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('weddings', function (Blueprint $table) {
+            $table->string('map_url')->nullable()->after('reception_map_link');
+            $table->text('map_embed_url')->nullable()->after('map_url');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('weddings', function (Blueprint $table) {
+            $table->dropColumn(['map_url', 'map_embed_url']);
+        });
+    }
+};

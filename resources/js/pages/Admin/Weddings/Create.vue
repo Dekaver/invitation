@@ -25,10 +25,14 @@ const form = useForm({
     akad_start: '',
     akad_end: '',
     akad_location: '',
+    akad_map_link: '',
     reception_date: '',
     reception_start: '',
     reception_end: '',
     reception_location: '',
+    reception_map_link: '',
+    map_url: '',
+    map_embed_url: '',
     theme: 'classic',
 });
 
@@ -197,7 +201,7 @@ const breadcrumbs = [
                     </div>
 
                     <!-- Akad Date & Time -->
-                    <div class="grid grid-cols-4 gap-4">
+                    <div class="grid grid-cols-5 gap-4">
                         <div>
                             <Label for="akad_date">Akad Date *</Label>
                             <Input
@@ -240,10 +244,19 @@ const breadcrumbs = [
                                 placeholder="Mosque Name"
                             />
                         </div>
+                        <div>
+                            <Label for="akad_map_link">Akad Map Link</Label>
+                            <Input
+                                id="akad_map_link"
+                                v-model="form.akad_map_link"
+                                type="url"
+                                placeholder="https://maps.google.com/..."
+                            />
+                        </div>
                     </div>
 
                     <!-- Reception Date & Time -->
-                    <div class="grid grid-cols-4 gap-4">
+                    <div class="grid grid-cols-5 gap-4">
                         <div>
                             <Label for="reception_date">Reception Date *</Label>
                             <Input
@@ -293,6 +306,17 @@ const breadcrumbs = [
                                 placeholder="Hotel Name"
                             />
                         </div>
+                        <div>
+                            <Label for="reception_map_link"
+                                >Reception Map Link</Label
+                            >
+                            <Input
+                                id="reception_map_link"
+                                v-model="form.reception_map_link"
+                                type="url"
+                                placeholder="https://maps.google.com/..."
+                            />
+                        </div>
                     </div>
 
                     <!-- Theme -->
@@ -312,6 +336,34 @@ const breadcrumbs = [
                                 </SelectItem>
                             </SelectContent>
                         </Select>
+                    </div>
+
+                    <!-- Map URL -->
+                    <div>
+                        <Label for="map_url">Google Maps Link</Label>
+                        <Input
+                            id="map_url"
+                            v-model="form.map_url"
+                            type="url"
+                            placeholder="https://maps.google.com/..."
+                        />
+                        <p class="mt-1 text-xs text-muted-foreground">
+                            Link for "Open in Google Maps" button
+                        </p>
+                    </div>
+
+                    <!-- Map Embed URL -->
+                    <div>
+                        <Label for="map_embed_url">Google Maps Embed URL</Label>
+                        <Input
+                            id="map_embed_url"
+                            v-model="form.map_embed_url"
+                            type="url"
+                            placeholder="https://www.google.com/maps/embed?..."
+                        />
+                        <p class="mt-1 text-xs text-muted-foreground">
+                            Embed URL to display the map
+                        </p>
                     </div>
 
                     <!-- Buttons -->

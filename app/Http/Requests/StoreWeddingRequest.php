@@ -31,10 +31,14 @@ class StoreWeddingRequest extends FormRequest
             'akad_start' => 'nullable|date_format:H:i',
             'akad_end' => 'nullable|date_format:H:i|after:akad_start',
             'akad_location' => 'required|string|max:255',
+            'akad_map_link' => 'nullable|url',
             'reception_date' => 'required|date|after_or_equal:akad_date',
             'reception_start' => 'nullable|date_format:H:i',
             'reception_end' => 'nullable|date_format:H:i|after:reception_start',
             'reception_location' => 'required|string|max:255',
+            'reception_map_link' => 'nullable|url',
+            'map_url' => 'nullable|url',
+            'map_embed_url' => 'nullable|url',
             'theme' => 'required|in:classic,modern,elegant',
         ];
     }
