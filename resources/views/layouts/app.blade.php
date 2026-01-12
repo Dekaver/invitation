@@ -27,7 +27,7 @@
     </style>
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.ts'])
+    @vite(['resources/js/app.ts'])
     @stack('head')
 </head>
 
