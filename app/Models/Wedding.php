@@ -14,9 +14,11 @@ class Wedding extends Model
      */
     protected $fillable = [
         'slug',
+        'groom_short_name',
         'groom_name',
         'groom_father',
         'groom_mother',
+        'bride_short_name',
         'bride_name',
         'bride_father',
         'bride_mother',

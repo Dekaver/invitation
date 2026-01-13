@@ -16,7 +16,9 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 interface Wedding {
     id: number;
     slug: string;
+    groom_short_name: string;
     groom_name: string;
+    bride_short_name: string;
     bride_name: string;
     groom_father: string;
     groom_mother: string;
@@ -43,7 +45,9 @@ const props = defineProps<Props>();
 
 const form = useForm({
     slug: props.wedding.slug,
+    groom_short_name: props.wedding.groom_short_name,
     groom_name: props.wedding.groom_name,
+    bride_short_name: props.wedding.bride_short_name,
     bride_name: props.wedding.bride_name,
     groom_father: props.wedding.groom_father,
     groom_mother: props.wedding.groom_mother,
@@ -104,9 +108,52 @@ const breadcrumbs = [
                         <!-- Couple Names -->
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <Label for="groom_name"
-                                    >Nama Pengantin Pria *</Label
+                                <Label for="groom_short_name">
+                                    Nama Pendek Pria *
+                                </Label>
+                                <Input
+                                    id="groom_short_name"
+                                    v-model="form.groom_short_name"
+                                    type="text"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.groom_short_name,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.groom_short_name"
+                                    class="mt-1 text-xs text-red-500"
                                 >
+                                    {{ form.errors.groom_name }}
+                                </p>
+                            </div>
+                            <div>
+                                <Label for="bride_short_name"
+                                    >Nama Pendek Wanita *</Label
+                                >
+                                <Input
+                                    id="bride_short_name"
+                                    v-model="form.bride_short_name"
+                                    type="text"
+                                    :class="{
+                                        'border-red-500':
+                                            form.errors.bride_short_name,
+                                    }"
+                                />
+                                <p
+                                    v-if="form.errors.bride_short_name"
+                                    class="mt-1 text-xs text-red-500"
+                                >
+                                    {{ form.errors.bride_short_name }}
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Couple Names -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <Label for="groom_name">
+                                    Nama Pengantin Pria *
+                                </Label>
                                 <Input
                                     id="groom_name"
                                     v-model="form.groom_name"

@@ -12,10 +12,12 @@ return new class extends Migration {
             $table->string('slug')->unique();
 
             $table->string('groom_name');
+            $table->string('groom_short_name')->nullable();
             $table->string('groom_father')->nullable();
             $table->string('groom_mother')->nullable();
 
             $table->string('bride_name');
+            $table->string('bride_short_name')->nullable();
             $table->string('bride_father')->nullable();
             $table->string('bride_mother')->nullable();
 

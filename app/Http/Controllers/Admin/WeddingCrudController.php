@@ -73,10 +73,11 @@ class WeddingCrudController extends Controller
     {
         $wedding = Wedding::find($id);
         $wedding->slug = $request->slug;
+        $wedding->groom_short_name = $request->groom_short_name;
         $wedding->groom_name = $request->groom_name;
-        $wedding->bride_name = $request->bride_name;
         $wedding->groom_father = $request->groom_father;
         $wedding->groom_mother = $request->groom_mother;
+        $wedding->bride_short_name = $request->bride_short_name;
         $wedding->bride_father = $request->bride_father;
         $wedding->bride_mother = $request->bride_mother;
         $wedding->akad_date = $request->akad_date;

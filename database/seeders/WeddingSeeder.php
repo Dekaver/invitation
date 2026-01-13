@@ -19,9 +19,11 @@ class WeddingSeeder extends Seeder
         // Create a sample wedding
         $wedding = Wedding::create([
             'slug' => 'alwi-anti',
+            'groom_short_name' => 'Alwi',
             'groom_name' => 'Alwi Wahyudi',
             'groom_father' => 'Suwardi',
             'groom_mother' => 'Iis Fatimah',
+            'bride_short_name' => 'Anti',
             'bride_name' => 'Anti Suryani',
             'bride_father' => 'Idin',
             'bride_mother' => 'Aminah',
