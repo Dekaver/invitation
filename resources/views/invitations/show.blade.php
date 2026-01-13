@@ -28,7 +28,9 @@
                 @include('invitations.partials.countdown', ['wedding' => $wedding])
 
                 <!-- Map -->
-                @include('invitations.partials.map', ['wedding' => $wedding])
+                @if (!empty($wedding->map_embed_url))
+                    @include('invitations.partials.map', ['wedding' => $wedding])
+                @endif
 
 
                 @if ($wedding->gifts()->exists())
