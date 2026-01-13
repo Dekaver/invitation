@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('weddings', function (Blueprint $table) {
-            $table->string('map_url')->nullable()->after('reception_map_link');
-            $table->text('map_embed_url')->nullable()->after('map_url');
+            $table->string('map_url')->nullable();
+            $table->text('map_embed_url')->nullable();
         });
     }
 

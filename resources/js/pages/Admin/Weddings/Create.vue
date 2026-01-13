@@ -25,12 +25,10 @@ const form = useForm({
     akad_start: '',
     akad_end: '',
     akad_location: '',
-    akad_map_link: '',
     reception_date: '',
     reception_start: '',
     reception_end: '',
     reception_location: '',
-    reception_map_link: '',
     map_url: '',
     map_embed_url: '',
     theme: 'classic',
@@ -244,15 +242,6 @@ const breadcrumbs = [
                                 placeholder="Mosque Name"
                             />
                         </div>
-                        <div>
-                            <Label for="akad_map_link">Akad Map Link</Label>
-                            <Input
-                                id="akad_map_link"
-                                v-model="form.akad_map_link"
-                                type="url"
-                                placeholder="https://maps.google.com/..."
-                            />
-                        </div>
                     </div>
 
                     <!-- Reception Date & Time -->
@@ -304,17 +293,6 @@ const breadcrumbs = [
                                 v-model="form.reception_location"
                                 type="text"
                                 placeholder="Hotel Name"
-                            />
-                        </div>
-                        <div>
-                            <Label for="reception_map_link"
-                                >Reception Map Link</Label
-                            >
-                            <Input
-                                id="reception_map_link"
-                                v-model="form.reception_map_link"
-                                type="url"
-                                placeholder="https://maps.google.com/..."
                             />
                         </div>
                     </div>

@@ -8,10 +8,6 @@
                 Konfirmasi Kehadiran
             </h3>
 
-            <h2 class="font-wedding text-4xl text-gray-800 text-center mb-8">
-                RSVP
-            </h2>
-
             <form action="" method="POST" class="space-y-6">
                 @csrf
 

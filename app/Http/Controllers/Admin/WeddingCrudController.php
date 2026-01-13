@@ -84,12 +84,10 @@ class WeddingCrudController extends Controller
         $wedding->akad_start = $request->akad_start;
         $wedding->akad_end = $request->akad_end;
         $wedding->akad_location = $request->akad_location;
-        $wedding->akad_map_link = $request->akad_map_link;
         $wedding->reception_date = $request->reception_date;
         $wedding->reception_start = $request->reception_start;
         $wedding->reception_end = $request->reception_end;
         $wedding->reception_location = $request->reception_location;
-        $wedding->reception_map_link = $request->reception_map_link;
         $wedding->map_url = $request->map_url;
         $wedding->map_embed_url = $request->map_embed_url;
         $wedding->theme = $request->theme;

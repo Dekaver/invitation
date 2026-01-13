@@ -26,12 +26,10 @@ interface Wedding {
     akad_start: string;
     akad_end: string;
     akad_location: string;
-    akad_map_link: string;
     reception_date: string;
     reception_start: string;
     reception_end: string;
     reception_location: string;
-    reception_map_link: string;
     map_url: string;
     map_embed_url: string;
     theme: string;
@@ -55,12 +53,12 @@ const form = useForm({
     akad_start: props.wedding.akad_start,
     akad_end: props.wedding.akad_end,
     akad_location: props.wedding.akad_location,
-    akad_map_link: props.wedding.akad_map_link,
-    reception_date: props.wedding.reception_date,
+    reception_date:
+        props.wedding.reception_date &&
+        props.wedding.reception_date.split(' ')[0],
     reception_start: props.wedding.reception_start,
     reception_end: props.wedding.reception_end,
     reception_location: props.wedding.reception_location,
-    reception_map_link: props.wedding.reception_map_link,
     map_url: props.wedding.map_url,
     map_embed_url: props.wedding.map_embed_url,
     theme: props.wedding.theme,
@@ -250,7 +248,7 @@ const breadcrumbs = [
                                 <Input
                                     id="akad_date"
                                     v-model="form.akad_date"
-                                    type="datetime-local"
+                                    type="date"
                                     :class="{
                                         'border-red-500': form.errors.akad_date,
                                     }"
@@ -286,17 +284,6 @@ const breadcrumbs = [
                                     type="text"
                                 />
                             </div>
-                            <div>
-                                <Label for="akad_map_link"
-                                    >Link Maps Akad</Label
-                                >
-                                <Input
-                                    id="akad_map_link"
-                                    v-model="form.akad_map_link"
-                                    type="url"
-                                    placeholder="https://maps.google.com/..."
-                                />
-                            </div>
                         </div>
 
                         <!-- Reception Date & Time -->
@@ -308,7 +295,7 @@ const breadcrumbs = [
                                 <Input
                                     id="reception_date"
                                     v-model="form.reception_date"
-                                    type="datetime-local"
+                                    type="date"
                                     :class="{
                                         'border-red-500':
                                             form.errors.reception_date,
@@ -329,6 +316,7 @@ const breadcrumbs = [
                                     id="reception_start"
                                     v-model="form.reception_start"
                                     type="time"
+                                    step="3600000"
                                 />
                             </div>
                             <div>
@@ -349,17 +337,6 @@ const breadcrumbs = [
                                     id="reception_location"
                                     v-model="form.reception_location"
                                     type="text"
-                                />
-                            </div>
-                            <div>
-                                <Label for="reception_map_link"
-                                    >Link Maps Resepsi</Label
-                                >
-                                <Input
-                                    id="reception_map_link"
-                                    v-model="form.reception_map_link"
-                                    type="url"
-                                    placeholder="https://maps.google.com/..."
                                 />
                             </div>
                         </div>
