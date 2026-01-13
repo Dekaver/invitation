@@ -5,7 +5,8 @@
         <div class="max-w-3xl text-center">
 
             <!-- Ayat Arab -->
-            <div class="font-arabic text-3xl md:text-4xl leading-loose text-stone-800 mb-6" dir="rtl" lang="ar">
+            <div class="font-arabic text-3xl md:text-4xl leading-loose text-stone-800 mb-6 animate-on-scroll fade-in duration-5000 delay-200 p-2"
+                dir="rtl" lang="ar">
                 وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
             </div>
 
