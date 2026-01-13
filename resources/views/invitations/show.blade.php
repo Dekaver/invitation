@@ -36,20 +36,36 @@
                 @if ($wedding->gifts()->exists())
                     <div class="bg-gray-50 rounded-lg p-6">
                         <h2 class="text-2xl font-bold text-gray-800 mb-4">Informasi Hadiah</h2>
+
                         <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
                             @foreach ($wedding->gifts as $gift)
                                 <div class="border border-gray-200 rounded-lg p-4">
-                                    <h3 class="font-semibold text-gray-800 mb-2">{{ $gift->bank_name }}</h3>
+                                    <h3 class="font-semibold text-gray-800 mb-2">
+                                        {{ $gift->bank_name }}
+                                    </h3>
+
                                     <p class="text-gray-600 mb-1">
-                                        <span class="font-medium">Nama Rekening:</span> {{ $gift->account_name }}
+                                        <span class="font-medium">Nama Rekening:</span>
+                                        {{ $gift->account_name }}
                                     </p>
-                                    <p class="text-gray-600 font-mono bg-gray-100 p-2 rounded">
-                                        {{ $gift->account_number }}
-                                    </p>
+
+                                    <div class="flex items-center gap-2">
+                                        <p class="text-gray-600 font-mono bg-gray-100 p-2 rounded flex-1 copy-target">
+                                            {{ $gift->account_number }}
+                                        </p>
+
+                                        <button onclick="copyPrevious(this)"
+                                            class="bg-purple-600 hover:bg-purple-700 text-white text-sm px-3 py-2 rounded transition">
+                                            Copy
+                                        </button>
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
                     </div>
+
+
+
                 @endif
 
                 <!-- RSVP Form -->
@@ -76,4 +92,17 @@
             display: none;
         }
     </style>
+@endpush
+@push('scripts')
+    <script>
+        function copyPrevious(button) {
+            const textElement = button.previousElementSibling;
+            const text = textElement.innerText;
+
+            navigator.clipboard.writeText(text).then(() => {
+                button.innerText = 'Copied ✓';
+                setTimeout(() => button.innerText = 'Copy', 1500);
+            });
+        }
+    </script>
 @endpush

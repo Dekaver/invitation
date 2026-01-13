@@ -6,6 +6,7 @@ use App\Http\Requests\StoreRsvpRequest;
 use App\Models\Guest;
 use App\Models\Wedding;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class GuestController extends Controller
@@ -38,24 +39,20 @@ class GuestController extends Controller
      * @param StoreRsvpRequest $request
      * @return RedirectResponse
      */
-    public function updateRsvp(Wedding $wedding, Guest $guest, StoreRsvpRequest $request): RedirectResponse
+    public function store(Wedding $wedding, Request $request): RedirectResponse
     {
-        // Verify guest belongs to this wedding
-        if ($guest->wedding_id !== $wedding->id) {
-            abort(404);
-        }
-
         // Update RSVP status
-        $guest->update([
-            'rsvp_status' => $request->rsvp_status,
-            'total_guest' => $request->rsvp_status === 'yes' ? $request->total_guest : null,
+
+        
+        Guest::insert([
+            'wedding_id' => $wedding->id,
+            'guest_name' => $request->name,
+            'rsvp_status' => $request->rsvp_status === 'hadir' ? 'Hadir' : 'Tidak Hadir',
+            'message' => $request->message,
         ]);
 
         return redirect()
-            ->route('guest.show', [
-                'wedding' => $wedding->slug,
-                'guest' => $guest->uuid,
-            ])
-            ->with('success', 'RSVP saved successfully!');
+            ->back()
+            ->with('success', 'berhasil disimpan!');
     }
 }

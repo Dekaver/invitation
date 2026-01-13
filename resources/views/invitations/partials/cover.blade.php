@@ -16,6 +16,13 @@
     <!-- Content -->
     <div class="relative z-10 flex flex-col items-center space-y-4 -mt-16">
 
+
+        <!-- Bismilah -->
+        <span
+            class="font-arabic uppercase tracking-[0.3em] text-2xl md:text-4xl text-purple-500
+                   animate-in fade-in duration-1000">
+            بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+        </span>
         <!-- Subtitle -->
         <span
             class="uppercase tracking-[0.3em] text-xs md:text-sm text-purple-500
@@ -28,7 +35,8 @@
             class="font-wedding text-4xl md:text-6xl font-bold text-transparent bg-clip-text
                    bg-linear-to-r from-purple-600 to-pink-500
                    animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200 p-2">
-            {{ $wedding->groom_name }}
+            {{ $wedding->bride_short_name }}
+
         </h2>
 
         <!-- Divider -->
@@ -43,7 +51,7 @@
             class="font-wedding text-4xl md:text-6xl font-bold text-transparent bg-clip-text
                    bg-linear-to-r from-purple-600 to-pink-500
                    animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600 p-2">
-            {{ $wedding->bride_name }}
+            {{ $wedding->groom_short_name }}
         </h2>
         <button id="openInvitation"
             class="mt-12 bg-linear-to-r from-purple-600 to-pink-500 text-white py-3 px-8 rounded-full hover:shadow-lg transition animate-bounce">

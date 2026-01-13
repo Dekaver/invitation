@@ -8,7 +8,7 @@
                 Konfirmasi Kehadiran
             </h3>
 
-            <form action="" method="POST" class="space-y-6">
+            <form action="{{ route('invitations.guest.store', $wedding->slug) }}" method="POST" class="space-y-2">
                 @csrf
 
                 {{-- Nama --}}
@@ -17,13 +17,13 @@
                         Nama Anda
                     </label>
                     <input id="name" type="text" name="name" required placeholder="Nama lengkap"
-                        class="w-full rounded-xl border border-purple-200 px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500 focus:outline-none"
-                        disabled>
+                        class="w-full text-black rounded-xl border border-purple-200 px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500 focus:outline-none"
+                        readonly>
                 </div>
 
                 {{-- Kehadiran --}}
                 <div>
-                    <label class="block text-sm text-gray-600 mb-3">
+                    <label class="block text-sm text-gray-600 mb-2">
                         Kehadiran
                     </label>
 
@@ -50,7 +50,7 @@
                         Ucapan & Doa
                     </label>
                     <textarea name="message" rows="4" placeholder="Tuliskan ucapan terbaik Anda…"
-                        class="w-full rounded-xl border border-purple-200 px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
+                        class="w-full text-black rounded-xl border border-purple-200 px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500 focus:outline-none"></textarea>
                 </div>
 
                 {{-- Submit --}}

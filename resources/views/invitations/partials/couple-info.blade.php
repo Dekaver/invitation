@@ -54,7 +54,7 @@
                 <div class="w-16 h-px bg-stone-300 mb-4"></div>
 
                 <p class="text-sm text-stone-600 leading-relaxed">
-                    Putra dari<br>
+                    Putra kedua dari<br>
                     <span class="font-medium">
                         {{ $wedding->groom_father ?? '—' }}
                     </span>
@@ -79,7 +79,7 @@
                 <div class="w-16 h-px bg-stone-300 mb-4"></div>
 
                 <p class="text-sm text-stone-600 leading-relaxed">
-                    Putri dari<br>
+                    Putri kedua dari<br>
                     <span class="font-medium">
                         {{ $wedding->bride_father ?? '—' }}
                     </span>

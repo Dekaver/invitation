@@ -26,8 +26,8 @@ Route::prefix('inv')->name('invitations.')->group(function () {
         ->name('guest.show');
 
     // Update RSVP: POST /inv/{wedding:slug}/{guest:uuid}/rsvp
-    Route::post('{wedding:slug}/{guest:uuid}/rsvp', [GuestController::class, 'updateRsvp'])
-        ->name('guest.update-rsvp');
+    Route::post('{wedding:slug}/guest', [GuestController::class, 'store'])
+        ->name('guest.store');
 });
 
 require __DIR__.'/admin.php';

@@ -15,11 +15,9 @@ class Guest extends Model
      */
     protected $fillable = [
         'wedding_id',
-        'uuid',
         'name',
-        'phone',
         'rsvp_status',
-        'total_guest',
+        'message',
     ];
 
     /**
@@ -49,7 +47,7 @@ class Guest extends Model
      */
     public function hasResponded(): bool
     {
-        return in_array($this->rsvp_status, ['yes', 'no', 'maybe']);
+        return in_array($this->rsvp_status, ['Hadir', 'Tidak Hadir']);
     }
 
     /**

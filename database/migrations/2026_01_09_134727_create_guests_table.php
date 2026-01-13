@@ -13,7 +13,7 @@ return new class extends Migration {
                   ->cascadeOnDelete();
             $table->string('guest_name')->nullable();
             
-            $table->boolean('rsvp_status')->default(false);
+            $table->string('rsvp_status')->default('Tidak Hadir');
             $table->text('message');
             
             $table->timestamps();
