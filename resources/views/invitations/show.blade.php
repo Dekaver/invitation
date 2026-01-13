@@ -71,6 +71,7 @@
                 <!-- RSVP Form -->
                 @include('invitations.partials.rsvp-form', ['wedding' => $wedding])
 
+
                 <!-- Thanks -->
                 @include('invitations.partials.thanksgiving', ['wedding' => $wedding])
 
