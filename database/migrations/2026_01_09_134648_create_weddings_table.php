@@ -29,6 +29,9 @@ return new class extends Migration {
             $table->time('reception_end')->nullable();  
             $table->string('reception_location')->nullable();
 
+            $table->string('map_url')->nullable();
+            $table->text('map_embed_url')->nullable();
+
             $table->string('theme')->default('default');
 
             $table->timestamps();

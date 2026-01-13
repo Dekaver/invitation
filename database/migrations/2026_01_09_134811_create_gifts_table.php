@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('gifts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('wedding_id')
-                  ->constrained()
+                  ->constrained('weddings')
                   ->cascadeOnDelete();
 
             $table->string('bank_name');

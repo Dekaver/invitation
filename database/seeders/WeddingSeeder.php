@@ -25,75 +25,31 @@ class WeddingSeeder extends Seeder
             'bride_name' => 'Anti Suryani',
             'bride_father' => 'Idin',
             'bride_mother' => 'Aminah',
-            'akad_date' => now()->addMonth()->setHour(10)->setMinute(0),
-            'akad_start' => now()->addMonth()->setHour(10)->setMinute(0),
-            'akad_end' => now()->addMonth()->setHour(11)->setMinute(0),
-            'akad_location' => 'Masjid Al-Hana, Jalan Imam Bonjol No. 42, Jakarta Pusat',
-            'reception_date' => now()->addMonth()->setHour(18)->setMinute(0),
-            'reception_start' => now()->addMonth()->setHour(18)->setMinute(0),
-            'reception_end' => now()->addMonth()->setHour(22)->setMinute(0),
-            'reception_location' => 'Grand Ballroom Hotel, Jalan Merdeka Barat No. 10, Jakarta',
+            'akad_date' => '2025-01-23',
+            'akad_start' => '08:00:00',
+            'akad_end' => '11:00:00',
+            'akad_location' => 'KUA Long Ikis, Kab. Paser',
+            'reception_date' => '2025-01-25',
+            'reception_start' => '10:00:00',
+            'reception_end' => '22:00:00    ',
+            'reception_location' => 'Ds. Tajur Blok E, RT. 04, Kec. Long Ikis, Kab. Paser (Kediaman Mempelai Wanita)',
             'theme' => 'elegant-gold',
         ]);
 
         // Add gift information
         Gift::create([
             'wedding_id' => $wedding->id,
-            'bank_name' => 'Bank Central Asia',
-            'account_name' => 'John Doe',
-            'account_number' => '7265123456',
+            'bank_name' => 'Mandiri',
+            'account_name' => 'Alwi Wahyudi',
+            'account_number' => '1490019611591',
         ]);
 
         Gift::create([
             'wedding_id' => $wedding->id,
             'bank_name' => 'Bank Mandiri',
-            'account_name' => 'Sarah Jane Smith',
-            'account_number' => '1410022334455',
+            'account_name' => 'Anti Suryani',
+            'account_number' => '1490020751238',
         ]);
-
-        // Create sample guests
-        $guestNames = [
-            'Ahmad Rahman',
-            'Siti Nurhaliza',
-            'Budi Santoso',
-            'Rina Wijaya',
-            'Bambang Irawan',
-            'Dewi Lestari',
-            'Rudi Hermawan',
-            'Anya Kusuma',
-            'Yusuf Ibrahim',
-            'Mawar Kusuma',
-        ];
-
-        foreach ($guestNames as $name) {
-            Guest::create([
-                'wedding_id' => $wedding->id,
-                'uuid' => Str::uuid(),
-                'name' => $name,
-                'phone' => fake()->phoneNumber(),
-                'rsvp_status' => fake()->randomElement(['yes', 'no', 'maybe', null]),
-                'total_guest' => fake()->boolean(70) ? fake()->numberBetween(1, 4) : 1,
-            ]);
-        }
-
-        // Add sample wishes
-        $wishMessages = [
-            'Congratulations on your wedding! Wishing you a lifetime of happiness together.',
-            'May your marriage be filled with love, laughter, and endless joy. Happy wedding day!',
-            'Two hearts, one love, one destiny. Best wishes for your beautiful journey together.',
-            'Wishing the happy couple a marriage full of love and understanding. Congratulations!',
-            'May your love story continue to be as beautiful and inspiring as it is today.',
-            'Sending love and best wishes as you start this exciting new chapter together.',
-            'What a beautiful day to celebrate your love. Wishing you both all the best!',
-        ];
-
-        foreach ($wishMessages as $message) {
-            Wish::create([
-                'wedding_id' => $wedding->id,
-                'guest_name' => fake()->firstName() . ' ' . fake()->lastName(),
-                'message' => $message,
-            ]);
-        }
 
         $this->command->info('Wedding seeded successfully!');
         $this->command->info('---');
@@ -101,8 +57,6 @@ class WeddingSeeder extends Seeder
         $this->command->info("Invitation link: /inv/{$wedding->slug}");
         $this->command->info('');
         $this->command->info('Sample guest UUID for RSVP:');
-        $firstGuest = $wedding->guests()->first();
-        $this->command->info("Guest: {$firstGuest->name}");
-        $this->command->info("RSVP link: /inv/{$wedding->slug}/{$firstGuest->uuid}");
+        $this->command->info("RSVP link: /inv/{$wedding->slug}");
     }
 }

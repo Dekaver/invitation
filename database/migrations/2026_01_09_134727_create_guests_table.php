@@ -11,16 +11,11 @@ return new class extends Migration {
             $table->foreignId('wedding_id')
                   ->constrained()
                   ->cascadeOnDelete();
-
-            $table->uuid('uuid')->unique();
-            $table->string('name');
-            $table->string('phone')->nullable();
-
-            $table->enum('rsvp_status', ['yes', 'no', 'maybe'])
-                  ->nullable();
-
-            $table->unsignedTinyInteger('total_guest')->default(1);
-
+            $table->string('guest_name')->nullable();
+            
+            $table->boolean('rsvp_status')->default(false);
+            $table->text('message');
+            
             $table->timestamps();
         });
     }
