@@ -18,9 +18,11 @@ class WeddingController extends Controller
     {
         // Eager load relationships to minimize queries
         $wedding->load(['guests', 'gifts']);
+        $guests = $wedding->guests()->latest()->paginate(5);
 
         return view('invitations.show', [
             'wedding' => $wedding,
+            'guests' => $guests,
         ]);
     }
 }

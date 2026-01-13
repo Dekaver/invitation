@@ -1,6 +1,5 @@
 {{-- RSVP Section --}}
-<div class="relative py-24 bg-purple-50">
-
+<div class="relative py-8 bg-purple-50">
     <div class="max-w-md mx-auto px-6">
         <div class="bg-white/80 backdrop-blur rounded-3xl p-8 shadow-sm border border-purple-200">
 
@@ -62,10 +61,77 @@
             </form>
         </div>
     </div>
-
 </div>
 
+{{-- RSVP Message --}}
+{{-- @dd($wedding->guests) --}}
+
+
 {{-- Tampilkan pesan pesan --}}
+<div class="relative py-2 bg-purple-50 flex flex-col items-center">
+    @forelse ($guests as $guest)
+        <div class="comment-box">
+            <span class="name">{{ $guest->guest_name }}</span>
+            <span class="status">{{ $guest->rsvp_status }}</span>
+            <p>
+                {{ $guest->message }}
+            </p>
+        </div>
+    @empty
+        <p class="text-sm text-gray-500">Belum ada pesan, Jadilah yang pertama</p>
+    @endforelse
+    {{-- paginator --}}
+    {{ $guests->links() }}
+</div>
+
+@push('head')
+    <style>
+        .comment-box {
+            position: relative;
+            max-width: 80%;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* ekor balon */
+        .comment-box::before {
+            content: "";
+            position: absolute;
+            left: 18px;
+            top: -8px;
+            width: 16px;
+            height: 16px;
+            background: #ffffff;
+            transform: rotate(45deg);
+            box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        /* nama & status */
+        .comment-box .name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #222;
+        }
+
+        .comment-box .status {
+            font-size: 13px;
+            color: #777;
+            margin-left: 6px;
+        }
+
+        /* isi pesan */
+        .comment-box p {
+            margin-top: 6px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #111;
+        }
+    </style>
+@endpush
 
 @if (session('success'))
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

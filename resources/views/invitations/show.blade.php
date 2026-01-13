@@ -35,7 +35,7 @@
 
                 @if ($wedding->gifts()->exists())
                     <div class="bg-gray-50 rounded-lg p-6">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Informasi Hadiah</h2>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Informasi Gifts</h2>
 
                         <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
                             @foreach ($wedding->gifts as $gift)
@@ -69,7 +69,7 @@
                 @endif
 
                 <!-- RSVP Form -->
-                @include('invitations.partials.rsvp-form', ['wedding' => $wedding])
+                @include('invitations.partials.rsvp-form', ['wedding' => $wedding, 'guests' => $guests])
 
 
                 <!-- Thanks -->
