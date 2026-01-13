@@ -18,7 +18,7 @@ class WeddingCrudController extends Controller
      */
     public function index(): Response
     {
-        $weddings = Wedding::with(['guests', 'wishes'])
+        $weddings = Wedding::with(['guests'])
             ->get()
             ->map(fn ($w) => [
                 'id' => $w->id,
@@ -29,7 +29,6 @@ class WeddingCrudController extends Controller
                 'reception_date' => $w->reception_date,
                 'theme' => $w->theme,
                 'guests_count' => $w->guests->count(),
-                'wishes_count' => $w->wishes->count(),
             ]);
 
         return Inertia::render('Admin/Weddings/Index', [

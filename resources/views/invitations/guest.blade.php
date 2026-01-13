@@ -148,14 +148,6 @@
                     </p>
                 @endif
             </div>
-
-            <!-- Link to Wishes -->
-            <div class="mt-8 text-center">
-                <a href="{{ route('invitations.wishes.index', ['wedding' => $wedding->slug]) }}"
-                    class="text-purple-600 hover:text-purple-700 font-semibold">
-                    ← Lihat Undangan Pernikahan & Tinggalkan Ucapan
-                </a>
-            </div>
         </div>
     </div>
 

@@ -55,17 +55,6 @@
                 <!-- RSVP Form -->
                 @include('invitations.partials.rsvp-form', ['wedding' => $wedding])
 
-                <!-- Wishes List -->
-                @include('invitations.partials.wishes-list', [
-                    'wedding' => $wedding,
-                    'wishes' => $wedding->wishes,
-                ])
-
-                <!-- Wishes Submission Form -->
-                {{-- <div>
-                    @include('invitations.partials.wishes-form', ['wedding' => $wedding])
-                </div> --}}
-
                 <!-- Thanks -->
                 @include('invitations.partials.thanksgiving', ['wedding' => $wedding])
 

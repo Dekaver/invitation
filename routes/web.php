@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\WeddingController;
-use App\Http\Controllers\WishController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
@@ -29,14 +28,6 @@ Route::prefix('inv')->name('invitations.')->group(function () {
     // Update RSVP: POST /inv/{wedding:slug}/{guest:uuid}/rsvp
     Route::post('{wedding:slug}/{guest:uuid}/rsvp', [GuestController::class, 'updateRsvp'])
         ->name('guest.update-rsvp');
-
-    // Wishes list: /inv/{wedding:slug}/wishes
-    Route::get('{wedding:slug}/wishes', [WishController::class, 'index'])
-        ->name('wishes.index');
-
-    // Store wish: POST /inv/{wedding:slug}/wishes
-    Route::post('{wedding:slug}/wishes', [WishController::class, 'store'])
-        ->name('wishes.store');
 });
 
 require __DIR__.'/admin.php';

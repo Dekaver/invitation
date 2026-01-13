@@ -17,7 +17,7 @@ class WeddingController extends Controller
     public function show(Wedding $wedding): View
     {
         // Eager load relationships to minimize queries
-        $wedding->load(['guests', 'wishes', 'gifts']);
+        $wedding->load(['guests', 'gifts']);
 
         return view('invitations.show', [
             'wedding' => $wedding,

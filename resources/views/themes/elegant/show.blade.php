@@ -99,16 +99,7 @@
                 </div>
 
                 <div class="lg:col-span-2">
-                    @include('invitations.partials.wishes-list', [
-                        'wedding' => $wedding,
-                        'wishes' => $wishes,
-                    ])
                 </div>
-            </div>
-
-            <!-- Wishes Form -->
-            <div class="mt-12 max-w-2xl mx-auto">
-                @include('invitations.partials.wishes-form', ['wedding' => $wedding])
             </div>
 
             <!-- Gift Information -->

@@ -63,19 +63,8 @@
                     @include('invitations.partials.rsvp-form', ['wedding' => $wedding])
                 </div>
 
-                <!-- Wishes Column (2/3) -->
-                <div class="lg:col-span-2">
-                    @include('invitations.partials.wishes-list', [
-                        'wedding' => $wedding,
-                        'wishes' => $wishes,
-                    ])
-                </div>
-            </div>
-
-            <!-- Wishes Submission Form -->
-            <div class="mt-12">
-                @include('invitations.partials.wishes-form', ['wedding' => $wedding])
             </div>
         </div>
+    </div>
     </div>
 @endsection

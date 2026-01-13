@@ -13,7 +13,6 @@ interface Wedding {
     reception_date: string;
     theme: string;
     guests_count?: number;
-    wishes_count?: number;
 }
 
 interface Props {
@@ -141,7 +140,6 @@ const breadcrumbs = [
                         >
                             <div class="space-y-1">
                                 <p>👥 {{ wedding.guests_count || 0 }} guests</p>
-                                <p>✨ {{ wedding.wishes_count || 0 }} wishes</p>
                             </div>
                         </td>
                         <td
@@ -154,14 +152,6 @@ const breadcrumbs = [
                                 >
                                     <Button variant="outline" size="sm"
                                         >👥 Guests</Button
-                                    >
-                                </Link>
-                                <Link
-                                    :href="`/admin/weddings/${wedding.id}/wishes`"
-                                    as="a"
-                                >
-                                    <Button variant="outline" size="sm"
-                                        >✨ Wishes</Button
                                     >
                                 </Link>
                                 <Link

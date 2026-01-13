@@ -49,13 +49,13 @@ const form = useForm({
     groom_mother: props.wedding.groom_mother,
     bride_father: props.wedding.bride_father,
     bride_mother: props.wedding.bride_mother,
-    akad_date: props.wedding.akad_date,
+    akad_date: props.wedding.akad_date && props.wedding.akad_date.split('T')[0],
     akad_start: props.wedding.akad_start,
     akad_end: props.wedding.akad_end,
     akad_location: props.wedding.akad_location,
     reception_date:
         props.wedding.reception_date &&
-        props.wedding.reception_date.split(' ')[0],
+        props.wedding.reception_date.split('T')[0],
     reception_start: props.wedding.reception_start,
     reception_end: props.wedding.reception_end,
     reception_location: props.wedding.reception_location,
@@ -245,6 +245,7 @@ const breadcrumbs = [
                         <div class="grid grid-cols-5 gap-4">
                             <div>
                                 <Label for="akad_date">Tanggal Akad *</Label>
+                                {{ typeof form.akad_date }}
                                 <Input
                                     id="akad_date"
                                     v-model="form.akad_date"

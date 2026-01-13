@@ -85,23 +85,11 @@
 
             <!-- Layout: Wishes & RSVP -->
             <div class="grid lg:grid-cols-3 gap-12">
-                <!-- Wishes -->
-                <div class="lg:col-span-2">
-                    @include('invitations.partials.wishes-list', [
-                        'wedding' => $wedding,
-                        'wishes' => $wishes,
-                    ])
-                </div>
 
                 <!-- RSVP -->
                 <div class="lg:col-span-1">
                     @include('invitations.partials.rsvp-form', ['wedding' => $wedding])
                 </div>
-            </div>
-
-            <!-- Wishes Form -->
-            <div class="mt-20">
-                @include('invitations.partials.wishes-form', ['wedding' => $wedding])
             </div>
 
             <!-- Gift Info -->

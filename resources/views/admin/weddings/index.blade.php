@@ -62,10 +62,6 @@
                                     class="text-green-600 hover:text-green-900 font-medium">
                                     Tamu
                                 </a>
-                                <a href="{{ route('admin.weddings.wishes.index', $wedding->id) }}"
-                                    class="text-purple-600 hover:text-purple-900 font-medium">
-                                    Keinginan
-                                </a>
                                 <a href="{{ route('admin.weddings.edit', $wedding->id) }}"
                                     class="text-blue-600 hover:text-blue-900 font-medium">
                                     Edit

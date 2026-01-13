@@ -11,7 +11,6 @@ const props = defineProps({
         default: () => ({
             totalWeddings: 0,
             totalGuests: 0,
-            totalWishes: 0,
             upcomingWeddings: 0,
         }),
     },
@@ -64,24 +63,6 @@ const breadcrumbs = [
                     <p class="text-xs text-muted-foreground">
                         Guest invitations
                     </p>
-                </CardContent>
-            </Card>
-
-            <!-- Total Wishes -->
-            <Card>
-                <CardHeader
-                    class="flex flex-row items-center justify-between space-y-0 pb-2"
-                >
-                    <CardTitle class="text-sm font-medium"
-                        >Total Wishes</CardTitle
-                    >
-                    <span class="text-2xl">✨</span>
-                </CardHeader>
-                <CardContent>
-                    <div class="text-2xl font-bold">
-                        {{ props.stats.totalWishes || 0 }}
-                    </div>
-                    <p class="text-xs text-muted-foreground">Wishes received</p>
                 </CardContent>
             </Card>
 

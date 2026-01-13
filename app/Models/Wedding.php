@@ -39,8 +39,8 @@ class Wedding extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'akad_date' => 'datetime',
-        'reception_date' => 'datetime',
+        'akad_date' => 'date',
+        'reception_date' => 'date',
     ];
 
     /**
@@ -61,16 +61,6 @@ class Wedding extends Model
     public function guests(): HasMany
     {
         return $this->hasMany(Guest::class);
-    }
-
-    /**
-     * Get all wishes for this wedding.
-     *
-     * @return HasMany
-     */
-    public function wishes(): HasMany
-    {
-        return $this->hasMany(Wish::class);
     }
 
     /**

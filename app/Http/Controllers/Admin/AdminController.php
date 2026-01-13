@@ -16,7 +16,6 @@ class AdminController extends Controller
         $stats = [
             'totalWeddings' => Wedding::count(),
             'totalGuests' => Guest::count(),
-            'totalWishes' => Wish::count(),
             'upcomingWeddings' => Wedding::where('akad_date', '>=', now())
                 ->where('akad_date', '<=', now()->addMonth())
                 ->count(),
