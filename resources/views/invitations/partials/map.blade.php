@@ -25,7 +25,7 @@
         {{-- Address + Button --}}
         <div class="text-center mt-8">
             <p class="text-gray-700 leading-relaxed mb-4">
-                {{ $wedding->akad_location ?? $wedding->reception_location }}
+                {{ $wedding->reception_location }}
             </p>
 
             @if (!empty($wedding->map_url))
