@@ -82,6 +82,15 @@
                 main.scrollIntoView({
                     behavior: 'smooth'
                 });
+
+                // play music
+                if (music.paused) {
+                    music.play();
+                    playBtn.innerHTML = "⏸️"; // ganti icon saat play
+                } else {
+                    music.pause();
+                    playBtn.innerHTML = "🎵"; // icon saat pause
+                }
             });
         });
     </script>

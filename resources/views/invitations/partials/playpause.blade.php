@@ -1,6 +1,6 @@
 <!-- Tombol Play Musik -->
 <button id="playBtn" title="Putar Musik">
-    <span>⏸️</span>
+    <span>🎵</span>
 </button>
 
 <!-- Audio Background -->
