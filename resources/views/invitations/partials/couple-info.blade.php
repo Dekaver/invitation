@@ -1,7 +1,15 @@
 <!-- Couple Information -->
 <div class="bg-purple-200-50 rounded-lg">
     <!-- AR-RUM -->
-    <div id="mainContent" class="relative h-[50vh] flex items-center justify-center bg-pink-50 px-6">
+    <div id="mainContent"
+        class="relative h-[50vh] flex items-center justify-center bg-green-50 px-6 pattern-background overflow-hidden">
+
+        <img src="{{ asset('assets/5.png') }}" class="absolute -top-6 -left-6 w-52 opacity-60 rotate-180" />
+        <img src="{{ asset('assets/3.png') }}" class="absolute -top-6 left-1/2 -translate-x-1/2 w-56 opacity-60" />
+        <img src="{{ asset('assets/5.png') }}" class="absolute -top-6 -right-6 w-52 opacity-60 rotate-x-180" />
+
+        <img src="{{ asset('assets/5.png') }}" class="absolute -bottom-6 -left-6 w-52 opacity-60 scale-x-[-1]" />
+        <img src="{{ asset('assets/5.png') }}" class="absolute -bottom-6 -right-6 w-52 opacity-60 " />
         <div class="max-w-3xl text-center">
 
             <!-- Ayat Arab -->
@@ -30,7 +38,7 @@
     </div>
 
 
-    <div class="relative py-24 bg-purple-50 overflow-hidden">
+    <div class="relative py-24 bg-purple-50 overflow-hidden pattern-circle">
 
         <!-- SVG Ornament Top -->
         <svg class="absolute top-0 left-1/2 -translate-x-1/2 w-72 opacity-20" viewBox="0 0 400 120" fill="none"
@@ -38,7 +46,6 @@
             <path d="M20 100 C100 20, 300 20, 380 100" stroke="#9CA3AF" stroke-width="2" fill="none" />
             <circle cx="200" cy="40" r="6" fill="#9CA3AF" />
         </svg>
-
 
         <div class="relative max-w-4xl mx-auto grid md:grid-cols-2 gap-16 px-6 text-center">
 

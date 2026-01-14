@@ -1,4 +1,4 @@
-<div class="relative py-28 bg-purple-50 overflow-hidden">
+<div class="relative py-28 bg-purple-50 overflow-hidden pattern-circle">
 
     <!-- Top Ornament -->
     <svg class="absolute top-8 left-1/2 -translate-x-1/2 w-80 opacity-30" viewBox="0 0 400 120" fill="none"
@@ -6,7 +6,22 @@
         <path d="M20 100 C100 20, 300 20, 380 100" stroke="#C4B5FD" stroke-width="2" />
     </svg>
 
+    {{-- <img src="{{ asset('assets/11.png') }}" class="absolute top-0 right-6 w-52" /> --}}
+    <img src="{{ asset('assets/11.png') }}"
+        class="absolute left-0 top-[40%] w-52 z-20 opacity-80 rotate-90 animate-pulse" />
+    <img src="{{ asset('assets/11.png') }}"
+        class="absolute right-0 top-[40%] w-52 z-20 opacity-80 scale-x-[-1] rotate-90 animate-pulse" />
+    <!-- Frame -->
+    <img src="{{ asset('assets/14.png') }}" class="absolute left-2 top-2 w-52 z-20 opacity-80 animate-pulse" />
+    <img src="{{ asset('assets/14.png') }}"
+        class="absolute right-2 top-2 w-52 z-20 opacity-80 animate-pulse scale-x-[-1]" />
+    <img src="{{ asset('assets/14.png') }}"
+        class="absolute left-2 bottom-2 w-52 z-20 opacity-80 animate-pulse scale-y-[-1]" />
+    <img src="{{ asset('assets/14.png') }}"
+        class="absolute right-2 bottom-2 w-52 z-20 opacity-80 animate-pulse scale-y-[-1] scale-x-[-1]" />
+
     <div class="relative max-w-xl mx-auto px-6 space-y-14 text-center">
+
 
         {{-- Akad Nikah --}}
         @if ($wedding->akad_date)

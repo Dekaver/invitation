@@ -16,10 +16,10 @@
         <div class="lg:w-[38%] h-screen overflow-y-auto bg-white scroll-hide-y">
             <div class="">
                 <!-- Cover -->
-                @include('invitations.partials.cover', ['wedding' => $wedding])
+                {{-- @include('invitations.partials.cover', ['wedding' => $wedding]) --}}
 
                 <!-- Couple Information -->
-                @include('invitations.partials.couple-info', ['wedding' => $wedding])
+                {{-- @include('invitations.partials.couple-info', ['wedding' => $wedding]) --}}
 
                 <!-- Event Details -->
                 @include('invitations.partials.event-details', ['wedding' => $wedding])
@@ -39,7 +39,7 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
                             @foreach ($wedding->gifts as $gift)
-                                <div class="border border-gray-200 rounded-lg p-4">
+                                <div class="border border-gray-200 rounded-lg p-4 pattern-circle-layered">
                                     <h3 class="font-semibold text-gray-800 mb-2">
                                         {{ $gift->bank_name }}
                                     </h3>
@@ -84,13 +84,22 @@
 
 @push('head')
     <style>
-        .scroll-hide-y {
-            overflow-y: scroll;
-            scrollbar-width: none;
+        .pattern-circle {
+            background-color: #f5f3ff;
+            background-image: radial-gradient(circle,
+                    rgba(196, 185, 253, 0.25) 2px,
+                    transparent 2px);
+            background-size: 24px 24px;
         }
-
-        .scroll-hide-y::-webkit-scrollbar {
-            display: none;
+    </style>
+    <style>
+        .pattern-circle-layered {
+            background-color: #f5f3ff;
+            background-image:
+                radial-gradient(circle, rgba(196, 185, 253, .25) 2px, transparent 2px),
+                radial-gradient(circle, rgba(196, 185, 253, .15) 4px, transparent 4px);
+            background-size: 24px 24px, 48px 48px;
+            background-position: 0 0, 12px 12px;
         }
     </style>
 @endpush

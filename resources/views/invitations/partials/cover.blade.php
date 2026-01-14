@@ -9,14 +9,16 @@
 
     <!-- Decorative side -->
     <img src="{{ asset('assets/3.png') }}" class="absolute top-[20%] -left-20 w-48 opacity-60 rotate-90" />
-    <img src="{{ asset('assets/3.png') }}" class="absolute top-[30%] -left-20 w-48 opacity-60 rotate-90" />
-    <img src="{{ asset('assets/3.png') }}" class="absolute top-[20%] -right-20 w-48 opacity-60 rotate-90" />
-    <img src="{{ asset('assets/3.png') }}" class="absolute top-[30%] -right-20 w-48 opacity-60 rotate-90" />
+    <img src="{{ asset('assets/3.png') }}" class="absolute top-[30%] -left-20 w-48 opacity-60 rotate-90 " />
+    <img src="{{ asset('assets/3.png') }}" class="absolute top-[20%] -right-20 w-48 opacity-60 rotate-90 " />
+    <img src="{{ asset('assets/3.png') }}" class="absolute top-[30%] -right-20 w-48 opacity-60 rotate-90 " />
+
+    <!-- Decorative center -->
+    <img src="{{ asset('assets/center.png') }}"
+        class="absolute top-[35%] left-1/2 -translate-x-1/2 w-105 opacity-90 z-20 animate-in fade-in duration-1000 delay-0" />
 
     <!-- Content -->
-    <div class="relative z-10 flex flex-col items-center space-y-4 -mt-16">
-
-
+    <div class="relative z-10 flex flex-col items-center space-y-3 -mt-16">
         <!-- Bismilah -->
         <span
             class="font-arabic uppercase tracking-[0.3em] text-2xl md:text-4xl text-purple-500
@@ -51,9 +53,10 @@
             {{ $wedding->groom_short_name }}
         </h2>
         <!-- Couple Photo -->
-        <div class="w-56 h-56 md:w-64 md:h-64 rounded-full bg-cover bg-center ring-4 ring-white/70 shadow-xl animate-in fade-in scale-in-95 duration-1000 delay-700"
+        <div class="w-56 h-56 md:w-64 md:h-64 rounded-full bg-cover bg-center ring-4 ring-white/70 shadow-xl animate-in fade-in duration-1000 delay-700"
             style="background-image: url('{{ asset('assets/prewedding.png') }}'); background-position: center 20%;">
         </div>
+        <!-- Button -->
         <button id="openInvitation"
             class="mt-12 bg-linear-to-r from-purple-600 to-pink-500 text-white py-3 px-8 rounded-full hover:shadow-lg transition animate-bounce">
             Buka Undangan
@@ -62,8 +65,8 @@
 
     <!-- Decorative bottom -->
     <img src="{{ asset('assets/bottom.png') }}"
-        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full opacity-80
-               animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-800" />
+        class="absolute bottom-0 left-0 w-full opacity-80
+               animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-0" />
 </div>
 @push('scripts')
     <script>
