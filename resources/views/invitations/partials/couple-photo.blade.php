@@ -1,7 +1,7 @@
 <!-- Couple Photo Section -->
 <div class="h-full flex flex-col items-center justify-center p-8 text-center
            bg-center bg-cover bg-no-repeat relative"
-    style="background-image: url('{{ asset('assets/prewedding.png') }}');">
+    style="background-image: url('{{ asset('assets/prewedding.png') }}');background-position: center 20%;">
     <!-- overlay agar teks tetap terbaca -->
     <div class="absolute inset-0 backdrop-blur-xs"></div>
 

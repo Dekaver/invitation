@@ -29,8 +29,7 @@
                    animate-in fade-in duration-1000">
             The Wedding Of
         </span>
-
-        <!-- Groom -->
+        <!-- Bride -->
         <h2
             class="font-wedding text-4xl md:text-6xl font-bold text-transparent bg-clip-text
                    bg-linear-to-r from-purple-600 to-pink-500
@@ -38,21 +37,23 @@
             {{ $wedding->bride_short_name }}
 
         </h2>
-
         <!-- Divider -->
         <div class="flex items-center gap-4 animate-in fade-in duration-1000 delay-400">
             <span class="w-16 h-px bg-purple-300"></span>
             <span class="text-3xl text-purple-400 font-light">&</span>
             <span class="w-16 h-px bg-purple-300"></span>
         </div>
-
-        <!-- Bride -->
+        <!-- Groom -->
         <h2
             class="font-wedding text-4xl md:text-6xl font-bold text-transparent bg-clip-text
                    bg-linear-to-r from-purple-600 to-pink-500
                    animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-600 p-2">
             {{ $wedding->groom_short_name }}
         </h2>
+        <!-- Couple Photo -->
+        <div class="w-56 h-56 md:w-64 md:h-64 rounded-full bg-cover bg-center ring-4 ring-white/70 shadow-xl animate-in fade-in scale-in-95 duration-1000 delay-700"
+            style="background-image: url('{{ asset('assets/prewedding.png') }}'); background-position: center 20%;">
+        </div>
         <button id="openInvitation"
             class="mt-12 bg-linear-to-r from-purple-600 to-pink-500 text-white py-3 px-8 rounded-full hover:shadow-lg transition animate-bounce">
             Buka Undangan
