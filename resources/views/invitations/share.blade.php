@@ -50,7 +50,7 @@
 
 @push('scripts')
     <script>
-        const baseUrl = "{{ url('/share') }}";
+        const baseUrl = "{{ route('invitations.show', $wedding->slug) }}";
 
         function generateLink() {
             const name = document.getElementById('guestName').value.trim();
