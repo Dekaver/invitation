@@ -16,10 +16,10 @@
         <div class="lg:w-[38%] h-screen overflow-y-auto bg-white scroll-hide-y">
             <div class="">
                 <!-- Cover -->
-                {{-- @include('invitations.partials.cover', ['wedding' => $wedding]) --}}
+                @include('invitations.partials.cover', ['wedding' => $wedding])
 
                 <!-- Couple Information -->
-                {{-- @include('invitations.partials.couple-info', ['wedding' => $wedding]) --}}
+                @include('invitations.partials.couple-info', ['wedding' => $wedding])
 
                 <!-- Event Details -->
                 @include('invitations.partials.event-details', ['wedding' => $wedding])
