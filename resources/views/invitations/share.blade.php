@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="min-h-screen bg-linear-to-br from-purple-00 to-pink-50 flex items-center justify-center">
-        <div class="bg-purple-500 rounded-3xl shadow-xl px-10 py-12 max-w-sm w-full space-y-6">
+        <div class="bg-purple-200 rounded-3xl shadow-xl px-10 py-12 max-w-sm w-full space-y-6">
             <h1 class="text-xl font-semibold text-purple-700 text-center">
                 Share Undangan
             </h1>
@@ -15,7 +15,7 @@
                     Nama Tamu
                 </label>
                 <input id="guestName" type="text" placeholder="Contoh: Bpk Erza"
-                    class="w-full rounded-xl border-gray-300 focus:border-purple-400 focus:ring-purple-400">
+                    class="w-full rounded-sm border-gray-300 focus:border-purple-400 focus:ring-purple-400 bg-white">
             </div>
 
             <!-- Output link -->
@@ -23,7 +23,7 @@
                 <label class="block text-sm text-gray-600 mb-2">
                     Link Undangan
                 </label>
-                <input id="inviteLink" readonly class="w-full rounded-xl bg-gray-100 text-sm">
+                <input id="inviteLink" readonly class="w-full rounded-sm bg-gray-100 text-sm">
             </div>
 
             <!-- Actions -->
