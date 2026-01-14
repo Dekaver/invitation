@@ -7,18 +7,17 @@
     </svg>
 
     {{-- <img src="{{ asset('assets/11.png') }}" class="absolute top-0 right-6 w-52" /> --}}
+    <img src="{{ asset('assets/11.png') }}" class="absolute left-0 top-[40%] w-52  opacity-80 rotate-90 animate-pulse" />
     <img src="{{ asset('assets/11.png') }}"
-        class="absolute left-0 top-[40%] w-52 z-20 opacity-80 rotate-90 animate-pulse" />
-    <img src="{{ asset('assets/11.png') }}"
-        class="absolute right-0 top-[40%] w-52 z-20 opacity-80 scale-x-[-1] rotate-90 animate-pulse" />
+        class="absolute right-0 top-[40%] w-52  opacity-80 scale-x-[-1] rotate-90 animate-pulse" />
     <!-- Frame -->
-    <img src="{{ asset('assets/14.png') }}" class="absolute left-2 top-2 w-52 z-20 opacity-80 animate-pulse" />
+    <img src="{{ asset('assets/14.png') }}" class="absolute left-2 top-2 w-52  opacity-80 animate-pulse" />
     <img src="{{ asset('assets/14.png') }}"
-        class="absolute right-2 top-2 w-52 z-20 opacity-80 animate-pulse scale-x-[-1]" />
+        class="absolute right-2 top-2 w-52  opacity-80 animate-pulse scale-x-[-1]" />
     <img src="{{ asset('assets/14.png') }}"
-        class="absolute left-2 bottom-2 w-52 z-20 opacity-80 animate-pulse scale-y-[-1]" />
+        class="absolute left-2 bottom-2 w-52  opacity-80 animate-pulse scale-y-[-1]" />
     <img src="{{ asset('assets/14.png') }}"
-        class="absolute right-2 bottom-2 w-52 z-20 opacity-80 animate-pulse scale-y-[-1] scale-x-[-1]" />
+        class="absolute right-2 bottom-2 w-52  opacity-80 animate-pulse scale-y-[-1] scale-x-[-1]" />
 
     <div class="relative max-w-xl mx-auto px-6 space-y-14 text-center">
 

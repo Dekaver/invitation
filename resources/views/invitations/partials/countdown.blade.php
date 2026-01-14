@@ -1,5 +1,7 @@
 {{-- Countdown Section --}}
-<div class="relative py-24 bg-purple-50 text-center overflow-hidden">
+<div class="relative py-24 bg-purple-100 text-center overflow-hidden">
+
+    <img src="{{ asset('assets/12.png') }}" class="absolute right-0 top-0 w-52  opacity-20 scale-x-[-1] rotate-90" />
 
     <h3 class="text-2xl tracking-[0.25em] uppercase text-purple-500 mb-4">
         Menuju Hari Bahagia

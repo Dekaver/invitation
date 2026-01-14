@@ -81,7 +81,8 @@
         <p class="text-sm text-gray-500">Belum ada pesan, Jadilah yang pertama</p>
     @endforelse
     {{-- paginator --}}
-    {{ $guests->links() }}
+    {{ $guests->links('pagination::simple-tailwind') }}
+
 </div>
 
 @push('head')

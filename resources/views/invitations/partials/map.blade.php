@@ -1,5 +1,5 @@
 {{-- Map Section --}}
-<div class="relative py-24 bg-white overflow-hidden">
+<div class="relative py-24 bg-green-50 overflow-hidden pattern-circle">
 
     {{-- Heading --}}
     <div class="text-center mb-10 px-6">

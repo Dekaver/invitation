@@ -34,12 +34,12 @@
 
 
                 @if ($wedding->gifts()->exists())
-                    <div class="bg-gray-50 rounded-lg p-6">
+                    <div class="bg-purple-200 shadow-md p-6">
                         <h2 class="text-2xl font-bold text-gray-800 mb-4">Informasi Gifts</h2>
 
                         <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
                             @foreach ($wedding->gifts as $gift)
-                                <div class="border border-gray-200 rounded-lg p-4 pattern-circle-layered">
+                                <div class="border border-gray-200 rounded-lg p-4 pattern-circle">
                                     <h3 class="font-semibold text-gray-800 mb-2">
                                         {{ $gift->bank_name }}
                                     </h3>
