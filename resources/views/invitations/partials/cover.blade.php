@@ -15,7 +15,7 @@
 
     <!-- Decorative center -->
     <img src="{{ asset('assets/center.png') }}"
-        class="absolute top-[35%] left-1/2 -translate-x-1/2 w-105 opacity-90 z-20 animate-in fade-in duration-1000 delay-0" />
+        class="absolute top-[35%] left-1/2 -translate-x-1/2 w-105 opacity-90 z-10 animate-in fade-in duration-1000 delay-0" />
 
     <!-- Content -->
     <div class="relative z-10 flex flex-col items-center space-y-3 -mt-16">
