@@ -48,7 +48,8 @@
         document.addEventListener('DOMContentLoaded', function() {
 
             // GANTI TARGET TANGGAL DI SINI
-            const targetDate = new Date("{{ $wedding->akad_date->format('Y-m-d') }}T{{ $wedding->akad_start }}")
+            const targetDate = new Date(
+                    "{{ $wedding->reception_date->format('Y-m-d') }}T{{ $wedding->reception_start }}")
                 .getTime();
 
             const daysEl = document.getElementById('days');
